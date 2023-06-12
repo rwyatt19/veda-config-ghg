@@ -42,7 +42,7 @@ export default function HeaderComponent() {
   return (
     <Brand>
       <Link to='/'>
-        <span>VEDA</span> <span>GHG Center</span>
+        <span>GHG Monitoring and Information Center</span>
       </Link>
     </Brand>
   );
