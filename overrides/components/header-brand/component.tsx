@@ -42,7 +42,8 @@ export default function HeaderComponent() {
   return (
     <Brand>
       <Link to='/'>
-        <span>GHG Monitoring and Information Center</span>
+        <span>GHG 
+              Monitoring and Information Center</span>
       </Link>
     </Brand>
   );
