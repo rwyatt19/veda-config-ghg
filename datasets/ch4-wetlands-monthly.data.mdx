@@ -1,0 +1,82 @@
+---
+id: wetland-ch4-emissions-2022
+name: LPJ-wsl CH4 Wetland Emissions
+description: High-spatial resolution global CH4 emissions data product
+usage:
+  - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
+    label: View example notebook
+    title: 'Static view in VEDA documentation'
+  - url: "https://nasa-veda.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FNASA-IMPACT%2Fveda-docs&urlpath=lab%2Ftree%2Fveda-docs%2Fexample-notebooks%2Fno2-single-item-vizualization.ipynb&branch=no2-single-item-viz"
+    label: Run example notebook
+    title: 'Interactive session in VEDA 2i2c JupyterHub (requires account)'
+media:
+  src: ::file ./odiacch4-wetlands--cover.jpg
+  alt: White smoke coming from building
+  author:
+    name: Marcin Jozwiak
+    url: https://unsplash.com/photos/T-eDxGcn-Ok
+thematics:
+  - agriculture
+  - co2
+sources:
+  - NASA
+product:
+  - satellite
+layers:
+  - id: co2-emissions
+    stacCol: odiac-fossil-fuel-co2-emissions-2022
+    name: Fossil Fuel CO₂ Emissions
+    type: raster
+    description: Monthly CH$ emissions from wetlands.
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: co2-emissions
+      colormap_name: nipy_spectral
+      rescale:
+        - -10
+        - 300
+      nodata: 0
+    compare:
+      datasetId: odiac-fossil-fuel-co2-emissions-2022
+      layerId: co2-emissions
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }
+    legend:
+      unit: 
+        label: gC/m²/d
+      type: gradient
+      min: -10 gC/m²/d
+      max: 300 gC/m²/d
+      stops:
+        - '#0000ff'
+        - '#2c7bb6'
+        - '#abd9e9'
+        - '#ffffbf'
+        - '#fee090'
+        - '#fdaE61'
+        - '#f46d43'
+        - '#d73027'
+        - '#a50026'
+        - '#67001F'
+---
+
+<Block>
+  <Prose>
+    ## Wetland methane emissions
+    Wetland methane emissions produced by the Lund–Potsdam–Jena Dynamic Global Vegetation Model (LPJ-DGVM) Wald Schnee und Landscaft version (LPJ-wsl). LPJ-wsl is a prognostic model used to simulate future changes in wetland emissions and independently verified with remote sensing data products. The LPJ-wsl model is regularly used in conjunction with NASA’s GEOS model to simulate the impact of wetlands and other methane sources on atmospheric methane concentrations.
+    ## Data Product Citation
+    https://gmao.gsfc.nasa.gov/gmaoftp/lott/CH4/wetlands/daily/
+    ## Related Publications
+    1.Zhang, Z., Zimmermann, N. E., Stenke, A., Li, X., Hodson, E. L., Zhu, G., ... & Poulter, B. (2017). Emerging role of wetland methane emissions in driving 21st century climate change. Proceedings of the National Academy of Sciences, 114(36), 9647-9652.
+    ## License
+    CC BY 4.0 (Creative Commons Attribution 4.0 International)
+    ## Contact
+    Lesley Ott: lesley.ott@nasa.gov
+    ## Acknowledgment
+    Supported by NASA Goddard Space Flight Center.​
+  </Prose>
+</Block>
