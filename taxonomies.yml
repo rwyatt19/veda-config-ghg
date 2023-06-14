@@ -18,7 +18,7 @@ thematics:
 
 sources:
   - id: nasa
-    name: Meta Data for Good
+    name: NASA
   - id: epa-ghg
     name: EPA
   - id: noaa
