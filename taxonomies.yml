@@ -17,16 +17,16 @@ thematics:
     name: CO2
 
 sources:
-  - id: meta-pop
+  - id: nasa
     name: Meta Data for Good
   - id: epa-ghg
     name: EPA
-  - id: nasa-ciesin-grdi
-    name: NASA CIESIN
-  - id: atsdr-svi
-    name: ATSDR
-  - id: nasa/nies
-    name: NASA/NIES
+  - id: noaa
+    name: NOAA
+  - id: nist
+    name: NIST
+  - id: others
+    name: Others
 
 product:
   - id: satellite
