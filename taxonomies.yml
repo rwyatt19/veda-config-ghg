@@ -13,6 +13,8 @@ thematics:
     name: Agriculture
   - id: biomass
     name: Biomass
+  - id: co2
+    name: CO2
 
 sources:
   - id: meta-pop
@@ -25,3 +27,7 @@ sources:
     name: ATSDR
   - id: nasa/nies
     name: NASA/NIES
+
+product:
+  - id: satellite
+    name: Satellite observations
