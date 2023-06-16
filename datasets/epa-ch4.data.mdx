@@ -11,7 +11,7 @@ media:
 sources:
   - epa-ghg
 layers:
-  - id: 4f-field-burning-a
+  - id: 4f-field-burning
     stacCol: epa-gridded-annual-emissions
     name: Field Burning (annual)
     type: raster
@@ -38,7 +38,7 @@ layers:
         - "#f2ce00"
         - "#ef6a01"
         - "#cc0019"
-  - id: 4c-rice-cultivation-a
+  - id: 4c-rice-cultivation
     stacCol: epa-gridded-annual-emissions
     name: Rice Cultivation (annual)
     type: raster
@@ -65,7 +65,7 @@ layers:
         - "#f2ce00"
         - "#ef6a01"
         - "#cc0019"
-  - id: 4b-manure-management-a
+  - id: 4b-manure-management
     stacCol: epa-gridded-annual-emissions
     name: Manure Management (annual)
     type: raster
@@ -94,7 +94,7 @@ layers:
         - "#f2ce00"
         - "#ef6a01"
         - "#cc0019"
-  - id: 1a-combustion-stationary-a
+  - id: 1a-combustion-stationary
     stacCol: epa-gridded-annual-emissions
     name: Stationary Combustion (annual)
     type: raster
@@ -127,7 +127,7 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
-  - id: 1b2b-natural-gas-production-a
+  - id: 1b2b-natural-gas-production
     stacCol: epa-gridded-annual-emissions
     name: Natural Gas Production (annual)
     type: raster
@@ -154,15 +154,15 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
-  - id: 1b2a-petroleum-a
-      stacCol: epa-gridded-annual-emissions
-      name: Petroleum (annual)
-      type: raster
-      description: >-
+  - id: 1b2a-petroleum
+    stacCol: epa-gridded-annual-emissions
+    name: Petroleum (annual)
+    type: raster
+    description: >-
       Non-combustion emissions from sector 1B2a for petroleum systems, including production, transportation, and refining.
-      zoomExtent:
-        - 0
-        - 20
+    zoomExtent:
+      - 0
+      - 20
     sourceParams:
       assets: 1b2a-petroleum
       colormap_name: rainbow
@@ -184,7 +184,7 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
-  - id: 1b2a-petroleum
+  - id: 1b2a-petroleum-m
     stacCol: epa-gridded-monthly-emissions
     name: Petroleum (monthly)
     type: raster
@@ -202,7 +202,7 @@ layers:
       nodata: 0
     compare:
       datasetId: epa-emissions-monthly
-      layerId: 1b2a-petroleum
+      layerId: 1b2a-petroleum-m
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -219,7 +219,7 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
-  - id: 4f-field-burning
+  - id: 4f-field-burning-m
     stacCol: epa-gridded-monthly-emissions
     name: Field Burning (monthly)
     type: raster
@@ -236,7 +236,7 @@ layers:
       nodata: 0
     compare:
       datasetId: epa-emissions-monthly
-      layerId: 4f-field-burning
+      layerId: 4f-field-burning-m
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -253,7 +253,7 @@ layers:
         - "#f2ce00"
         - "#ef6a01"
         - "#cc0019"
-  - id: 4c-rice-cultivation
+  - id: 4c-rice-cultivation-m
     stacCol: epa-gridded-monthly-emissions
     name: Rice Cultivation (monthly)
     type: raster
@@ -270,7 +270,7 @@ layers:
       nodata: 0
     compare:
       datasetId: epa-emissions-monthly
-      layerId: 4c-rice-cultivation
+      layerId: 4c-rice-cultivation-m
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -287,7 +287,7 @@ layers:
         - "#f2ce00"
         - "#ef6a01"
         - "#cc0019"
-  - id: 4b-manure-management
+  - id: 4b-manure-management-m
     stacCol: epa-gridded-monthly-emissions
     name: Manure Management (monthly)
     type: raster
@@ -304,7 +304,7 @@ layers:
       nodata: 0
     compare:
       datasetId: epa-emissions-monthly
-      layerId: 4b-manure-management
+      layerId: 4b-manure-management-m
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -321,7 +321,7 @@ layers:
         - "#f2ce00"
         - "#ef6a01"
         - "#cc0019"
-  - id: 1a-combustion-stationary
+  - id: 1a-combustion-stationary-m
     stacCol: epa-gridded-monthly-emissions
     name: Stationary Combustion (monthly)
     type: raster
@@ -342,7 +342,7 @@ layers:
       nodata: 0
     compare:
       datasetId: epa-emissions-monthly
-      layerId: 1a-combustion-stationary
+      layerId: 1a-combustion-stationary-m
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -359,7 +359,7 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
-  - id: 1b2b-natural-gas-production
+  - id: 1b2b-natural-gas-production-m
     stacCol: epa-gridded-monthly-emissions
     name: Natural Gas Production (monthly)
     type: raster
@@ -376,7 +376,7 @@ layers:
       nodata: 0
     compare:
       datasetId: epa-emissions-monthly
-      layerId: 1b2b-natural-gas-production
+      layerId: 1b2b-natural-gas-production-m
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -393,7 +393,7 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
-  - id: 5-forest-fires
+  - id: 5-forest-fires-d
     stacCol: epa-gridded-daily-emissions
     name: Forest Fires (daily)
     type: raster
