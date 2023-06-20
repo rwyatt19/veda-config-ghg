@@ -6,9 +6,6 @@ usage:
   - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
     label: View example notebook
     title: 'Static view in VEDA documentation'
-  - url: "https://nasa-veda.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FNASA-IMPACT%2Fveda-docs&urlpath=lab%2Ftree%2Fveda-docs%2Fexample-notebooks%2Fno2-single-item-vizualization.ipynb&branch=no2-single-item-viz"
-    label: Run example notebook
-    title: 'Interactive session in VEDA 2i2c JupyterHub (requires account)'
 media:
   src: ::file ./emit-plume--cover.jpeg
   alt: White smoke coming from building
@@ -23,7 +20,7 @@ sources:
 product:
   - satellite
 layers:
-  - id: co2-emissions
+  - id: ch4-plume-emissions
     stacCol: odiac-fossil-fuel-co2-emissions-2022
     name: Fossil Fuel CO₂ Emissions
     type: raster
@@ -64,7 +61,10 @@ layers:
 <Block>
   <Prose>
     ## Methane ‘Super-Emitters’
-    
+    EMIT is a NASA Earth Venture Instrument investigation focused on achieving its two objectives. But the mission is also committed to ensuring that its measurements are made available for the additional science and applications that they will enable. All EMIT measurements and data products will be made available publicly through the NASA Land Processes Distributed Active Archive Center.
+    The EMIT instrument builds upon NASA’s long history of developing advanced imaging spectrometers for new science and applications. EMIT launched to the International Space Station (ISS) on July 14, 2022.
+    The data shows high-confidence research grade methane plumes from point source emitters - updated as they are identified - in keeping with JPL Open Science and Open Data policy.
+
     ## Data Product Citation
 
     ## Related Publications
@@ -72,7 +72,10 @@ layers:
     ## License
 
     ## Contact
-
+    Robert O. Green
+    Principal Investigator
+    Jet Propulsion Laboratory / NASA
+    
     ## Acknowledgment
 
   </Prose>
