@@ -184,7 +184,7 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
-  - id: 1b2a-petroleum-m
+  - id: 1b2a-petroleum
     stacCol: epa-gridded-monthly-emissions
     name: Petroleum (monthly)
     type: raster
@@ -201,7 +201,7 @@ layers:
         - 282207914557
       nodata: 0
     compare:
-      datasetId: epa-emissions-monthly
+      datasetId: epa-emissions-annual-tests
       layerId: 1b2a-petroleum
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -219,7 +219,7 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
-  - id: 4f-field-burning-m
+  - id: 4f-field-burning
     stacCol: epa-gridded-monthly-emissions
     name: Field Burning (monthly)
     type: raster
@@ -235,7 +235,7 @@ layers:
         - 800788398
       nodata: 0
     compare:
-      datasetId: epa-emissions-monthly
+      datasetId: epa-emissions-annual-tests
       layerId: 4f-field-burning
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -253,7 +253,7 @@ layers:
         - "#f2ce00"
         - "#ef6a01"
         - "#cc0019"
-  - id: 4c-rice-cultivation-m
+  - id: 4c-rice-cultivation
     stacCol: epa-gridded-monthly-emissions
     name: Rice Cultivation (monthly)
     type: raster
@@ -269,7 +269,7 @@ layers:
         - 38327875010
       nodata: 0
     compare:
-      datasetId: epa-emissions-monthly
+      datasetId: epa-emissions-annual-tests
       layerId: 4c-rice-cultivation
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -287,7 +287,7 @@ layers:
         - "#f2ce00"
         - "#ef6a01"
         - "#cc0019"
-  - id: 4b-manure-management-m
+  - id: 4b-manure-management
     stacCol: epa-gridded-monthly-emissions
     name: Manure Management (monthly)
     type: raster
@@ -303,7 +303,7 @@ layers:
         - 46428019752
       nodata: 0
     compare:
-      datasetId: epa-emissions-monthly
+      datasetId: epa-emissions-annual-tests
       layerId: 4b-manure-management
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -321,7 +321,7 @@ layers:
         - "#f2ce00"
         - "#ef6a01"
         - "#cc0019"
-  - id: 1a-combustion-stationary-m
+  - id: 1a-combustion-stationary
     stacCol: epa-gridded-monthly-emissions
     name: Stationary Combustion (monthly)
     type: raster
@@ -341,7 +341,7 @@ layers:
         - 11699984793
       nodata: 0
     compare:
-      datasetId: epa-emissions-monthly
+      datasetId: epa-emissions-annual-tests
       layerId: 1a-combustion-stationary
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -359,7 +359,7 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
-  - id: 1b2b-natural-gas-production-m
+  - id: 1b2b-natural-gas-production
     stacCol: epa-gridded-monthly-emissions
     name: Natural Gas Production (monthly)
     type: raster
@@ -375,7 +375,7 @@ layers:
         - 963867416985
       nodata: 0
     compare:
-      datasetId: epa-emissions-monthly
+      datasetId: epa-emissions-annual-tests
       layerId: 1b2b-natural-gas-production
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -393,7 +393,7 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
-  - id: 5-forest-fires-d
+  - id: 5-forest-fires
     stacCol: epa-gridded-daily-emissions
     name: Forest Fires (daily)
     type: raster
@@ -409,7 +409,7 @@ layers:
         - 282207914557
       nodata: 0
     compare:
-      datasetId: epa-emissions-daily
+      datasetId: epa-emissions-annual-tests
       layerId: 5-forest-fires
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
