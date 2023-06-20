@@ -1,5 +1,5 @@
 ---
-id: plume-ch4-emissions-2022
+id: jpl-ch4-plume-emissions
 name: Methane plumes
 description: High-spatial resolution CH4 emissions data product
 usage:
@@ -21,33 +21,33 @@ product:
   - satellite
 layers:
   - id: ch4-plume-emissions
-    stacCol: odiac-fossil-fuel-co2-emissions-2022
-    name: Fossil Fuel CO₂ Emissions
+    stacCol: nasa-jpl-plumes-emissions
+    name: CH4 plumes emissions
     type: raster
     description: Monthly CO₂ emissions from fossil fuel combustion, cement production and gas flaring.
     zoomExtent:
       - 0
       - 20
     sourceParams:
-      assets: co2-emissions
+      assets: ch4-plumes-emissions
       colormap_name: rainbow
       rescale:
         - -10
         - 300
       nodata: 0
     compare:
-      datasetId: odiac-fossil-fuel-co2-emissions-2022
-      layerId: co2-emissions
+      datasetId: jpl-ch4-plume-emissions
+      layerId: ch4-plume-emissions
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
         }
     legend:
       unit: 
-        label: gC/m²/d
+        label: ppm m
       type: gradient
-      min: -10 gC/m²/d
-      max: 300 gC/m²/d
+      min: 0 ppm m
+      max: 3000 ppm m
       stops:
         - '#60007d'
         - '#30137d'
