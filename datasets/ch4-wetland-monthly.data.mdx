@@ -1,6 +1,6 @@
 ---
 id: wetland-ch4-emissions-monthly-2022
-name: Welands CH4 emission monthly
+name: Wetlands CH4 emission monthly
 description: High-spatial resolution CH4 emissions data product
 usage:
   - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
@@ -23,34 +23,33 @@ sources:
 product:
   - satellite
 layers:
-  - id: co2-emissions
-    stacCol: odiac-fossil-fuel-co2-emissions-2022
-    name: Fossil Fuel CO₂ Emissions
+  - id: ch4-wetlands-emissions
+    stacCol: nasa-gsfc-ch4-wetlands-emissions
+    name: Wetlands Ch4 Emissions
     type: raster
     description: Monthly CO₂ emissions from fossil fuel combustion, cement production and gas flaring.
     zoomExtent:
       - 0
       - 20
     sourceParams:
-      assets: co2-emissions
+      assets: ch4-wetlands-emissions
       colormap_name: rainbow
       rescale:
         - -10
         - 300
       nodata: 0
     compare:
-      datasetId: odiac-fossil-fuel-co2-emissions-2022
-      layerId: co2-emissions
+      datasetId: wetlands-ch4-emissions
+      layerId: ch4-wetlands-emissions
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
         }
     legend:
-      unit: 
-        label: gC/m²/d
+      unit: kg CH4 m-2 mon-1
       type: gradient
-      min: -10 gC/m²/d
-      max: 300 gC/m²/d
+      min: 0 kg CH4 m-2 mon-1
+      max: 0.2 kg CH4 m-2 mon-1
       stops:
         - '#60007d'
         - '#30137d'
@@ -64,14 +63,17 @@ layers:
 <Block>
   <Prose>
     ## Wetland
-    
+    Estimates of wetland methane emissions produced by the Lund–Potsdam–Jena Dynamic Global Vegetation Model (LPJ-DGVM) Wald Schnee und Landscaft version (LPJ-wsl). LPJ-wsl is a prognostic model, meaning that it can be used to simulate future changes in wetland emissions and independently verified with remote sensing data products. The model includes a complex, topography dependent model of near surface hydrology, and a permafrost and dynamic snow model, allowing it to produce realistic distributions of inundated area. Highlighted areas show concentrated methane sources from tropical and high latitude ecosystems. The LPJ-wsl model is regularly used in conjunction with NASA’s GEOS model to simulate the impact of wetlands and other methane sources on atmospheric methane concentrations, compare against satellite and airborne data, and to improve understanding and prediction of wetland emissions.
     ## Data Product Citation
 
     ## Related Publications
-    
+    Zhang, Z., Zimmermann, N. E., Stenke, A., Li, X., Hodson, E. L., Zhu, G., ... & Poulter, B. (2017). Emerging role of wetland methane emissions in driving 21st century climate change. Proceedings of the National Academy of Sciences, 114(36), 9647-9652.
+   
     ## License
 
     ## Contact
+    Lesley Ott (NASA/GSFC)
+    Lead Scientist
 
     ## Acknowledgment
 
