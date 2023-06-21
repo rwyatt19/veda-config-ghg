@@ -4,8 +4,8 @@ name: ODIAC Fossil Fuel CO₂ Emissions
 description: A monthly 1 km resolution dataset of fossil fuel carbon dioxide emissions, version 2022
 usage:
   - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
-    label: View example notebook
-    title: 'Static view in VEDA documentation'
+    label: Notebook to read, visualize, and explore data statistics
+    title: 'ODIAC CO2 emissions data notebook'
 media:
   src: ::file ./odiac--dataset-cover.jpeg
   alt: White smoke coming from building
@@ -15,13 +15,13 @@ media:
 thematics:
   - co2
 sources:
-  - nasa
+  - NASA
 layers:
   - id: co2-emissions
     stacCol: odiac-fossil-fuel-co2-emissions-2022
     name: Fossil Fuel CO₂ Emissions
     type: raster
-    description: Monthly CO₂ emissions from fossil fuel combustion, cement production and gas flaring.
+    description: Monthly, 1 km CO₂ emissions from fossil fuel combustion, cement production and gas flaring.
     zoomExtent:
       - 0
       - 20
@@ -57,33 +57,41 @@ layers:
 
 <Block>
   <Prose>
-    The ODIAC (Open-source Data Inventory for Anthropogenic CO2) is a global high-resolution emission data product for fossil fuel carbon dioxide (CO2) emissions, originally developed under the Greenhouse gas Observing SATellite (GOSAT) project at the National Institute for Environmental Studies (NIES), Japan. ODIAC pioneered the combined use of space-based nighttime light data and individual power plant emission/location profiles to estimate the global spatial extent of fossil fuel CO2 emissions. With the innovative emission modeling approach, ODIAC achieved the fine picture of global fossil fuel CO2 emissions at a 1x1km, possibly the most beautiful global picture of human-made emissions. As seen in a number of publications in the literature, the ODIAC emission data product has been widely used by the international research community for a variety of research applications (e.g. CO2 flux inversion, urban emission estimation, and observing system design experiments). 
+    The ODIAC (Open-source Data Inventory for Anthropogenic CO₂) is a global high-resolution emission data product for fossil fuel carbon dioxide (CO2) emissions, originally developed under the Greenhouse gas Observing SATellite (GOSAT) project at the National Institute for Environmental Studies (NIES), Japan. ODIAC pioneered the combined use of space-based nighttime light data and individual power plant emission/location profiles to estimate the global spatial extent of fossil fuel CO2 emissions. With the innovative emission modeling approach, ODIAC achieved the fine picture of global fossil fuel CO2 emissions at a 1x1km, possibly the most beautiful global picture of human-made emissions. As seen in a number of publications in the literature, the ODIAC emission data product has been widely used by the international research community for a variety of research applications (e.g. CO2 flux inversion, urban emission estimation, and observing system design experiments). 
     
-    Temporal extent: 2000/01 - 2021/12
+    **Temporal extent**: 2000/01 - 2021/12
     
-    Temporal resolution: Monthly
+    **Temporal resolution**: Monthly
     
-    Spatial extent: Global
+    **Spatial extent**: Global
     
-    Spatial resolution: 1 km x 1 km
+    **Spatial resolution**: 1 km x 1 km
     
-    Data units: gC/m²/d
+    **Data units**: gC/m²/d
     
-    Data type: Research
+    **Data type**: Research
 
     ## Data Product Citation
-    Oda, T., & Maksyutov, S. (2015). ODIAC Fossil Fuel CO2 Emissions Dataset (Version name: ODIAC2022), Center for Global Environmental Research, National Institute for Environmental Studies, https://doi. org/10.17595/20170411.001.(Reference date : 2023/06/14)
-    ## Related Publications
-    1.Oda, T., & Maksyutov, S. (2011). A very high-resolution (1 km× 1 km) global fossil fuel CO 2 emission inventory derived using a point source database and satellite observations of nighttime lights. Atmospheric Chemistry and Physics, 11(2), 543-556.
+    Oda, T., & Maksyutov, S. (2015). ODIAC Fossil Fuel CO₂ Emissions Dataset (Version name: ODIAC2022), Center for Global Environmental Research, National Institute for Environmental Studies, https://doi.org/10.17595/20170411.001. (Reference date : 2023/06/14) [Link](https://www.nies.go.jp/doi/10.17595/20170411.001-e.html)
     
-    2.Oda, T., Maksyutov, S., & Andres, R. J. (2018). The Open-source Data Inventory for Anthropogenic CO 2, version 2016 (ODIAC2016): a global monthly fossil fuel CO 2 gridded emissions data product for tracer transport simulations and surface flux inversions. Earth System Science Data, 10(1), 87-107.
+    ## Related Publications
+    1.Oda, T., & Maksyutov, S. (2011). A very high-resolution (1 km× 1 km) global fossil fuel CO₂ emission inventory derived using a point source database and satellite observations of nighttime lights. Atmospheric Chemistry and Physics, 11(2), 543-556. [Link](https://acp.copernicus.org/articles/11/543/2011/)
+    
+    2.Oda, T., Maksyutov, S., & Andres, R. J. (2018). The Open-source Data Inventory for Anthropogenic CO₂, version 2016 (ODIAC2016): a global monthly fossil fuel CO 2 gridded emissions data product for tracer transport simulations and surface flux inversions. Earth System Science Data, 10(1), 87-107. [Link](https://essd.copernicus.org/articles/10/87/2018/essd-10-87-2018.html)
+    
     ## License
     CC BY 4.0 (Creative Commons Attribution 4.0 International)
+    
     ## Contact
     The ODIAC team (help@odiac.org)
     Dr. Shamil Maksyutov (NIES contact point)
     Dr. Tomohiro Oda (Project lead)
+    
     ## Acknowledgment
-    The Odiac team is supported by NASA Goddard Space Flight Center, NASA Carbon Monitoring System program, NASA Orbiting Carbon Observatory mission and NIES GOSAT project.​
+    The ODIAC team is supported by NASA Goddard Space Flight Center, NASA Carbon Monitoring System program, NASA Orbiting Carbon Observatory mission and NIES GOSAT project.​
+    
+    ## Disclaimer
+    All data provided in the GHG Center has been transformed from the original format into Cloud Optimized GeoTIFF (COG). Careful quality checks are used to ensure data transformation has been performed correctly.[Link](https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb)
+  
   </Prose>
 </Block>
