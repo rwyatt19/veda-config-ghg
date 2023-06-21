@@ -27,7 +27,3 @@ sources:
     name: NIST
   - id: others
     name: Others
-
-product:
-  - id: satellite
-    name: Satellite observations
