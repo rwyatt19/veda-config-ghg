@@ -30,10 +30,10 @@ layers:
       - 20
     sourceParams:
       assets: ch4-plume-emissions
-      colormap_name: rainbow
+      colormap_name: plasma
       rescale:
-        - 0
-        - 3000
+        - 1
+        - 1500
       nodata: -9999
     compare:
       datasetId: jpl-ch4-plume-emissions
@@ -46,22 +46,20 @@ layers:
       unit: 
         label: ppm m
       type: gradient
-      min: 0 ppm m
-      max: 3000 ppm m
+      min: 1 ppm m
+      max: >1500 ppm m
       stops:
-        - '#60007d'
-        - '#30137d'
-        - '#1960ae'
-        - '#7ac300'
-        - '#f2ce00'
-        - '#ef6a01'
-        - '#cc0019'
----
-
-<Block>
-  <Prose>
+        - '#3e049c',
+        - '#6300a7',
+        - '#8606a6',
+        - '#a62098',
+        - '#c03a83',
+        - '#d5546e',
+        - '#e76f5a',
+        - '#f68d45',
+        - '#fdae32',
+        - '#fcd225'
     ## Methane ‘Super-Emitters’
-    EMIT is a NASA Earth Venture Instrument investigation focused on achieving its two objectives. But the mission is also committed to ensuring that its measurements are made available for the additional science and applications that they will enable. All EMIT measurements and data products will be made available publicly through the NASA Land Processes Distributed Active Archive Center.
     The EMIT instrument builds upon NASA’s long history of developing advanced imaging spectrometers for new science and applications. EMIT launched to the International Space Station (ISS) on July 14, 2022.
     The data shows high-confidence research grade methane plumes from point source emitters - updated as they are identified - in keeping with JPL Open Science and Open Data policy.
 
