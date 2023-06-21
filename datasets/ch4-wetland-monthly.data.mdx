@@ -6,9 +6,6 @@ usage:
   - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
     label: View example notebook
     title: 'Static view in VEDA documentation'
-  - url: "https://nasa-veda.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FNASA-IMPACT%2Fveda-docs&urlpath=lab%2Ftree%2Fveda-docs%2Fexample-notebooks%2Fno2-single-item-vizualization.ipynb&branch=no2-single-item-viz"
-    label: Run example notebook
-    title: 'Interactive session in VEDA 2i2c JupyterHub (requires account)'
 media:
   src: ::file ./ch4-wetland--cover.jpeg
   alt: White smoke coming from building
@@ -27,7 +24,7 @@ layers:
     stacCol: nasa-gsfc-ch4-wetlands-emissions
     name: Wetlands Ch4 Emissions
     type: raster
-    description: Monthly CO₂ emissions from fossil fuel combustion, cement production and gas flaring.
+    description: Monthly CH4 emissions from wetlands
     zoomExtent:
       - 0
       - 20
@@ -35,7 +32,7 @@ layers:
       assets: ch4-wetlands-emissions
       colormap_name: rainbow
       rescale:
-        - 0.1
+        - 0
         - 2
       nodata: 0
     compare:
