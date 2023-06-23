@@ -1,11 +1,14 @@
 ---
 id: odiac-fossil-fuel-co2-emissions-2022
-name: ODIAC Fossil Fuel CO₂ Emissions 
-description: A monthly 1 km resolution dataset of fossil fuel carbon dioxide emissions, version 2022
+name: ODIAC - Fossil fuel CO₂ emission monthly data product (1km x 1km)
+description: High-spatial resolution global CO₂ emissions data product
 usage:
   - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
-    label: Notebook to read, visualize, and explore data statistics
-    title: 'ODIAC CO2 emissions data notebook'
+    label: View example notebook
+    title: 'Static view in VEDA documentation'
+  - url: "https://nasa-veda.2i2c.cloud/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FNASA-IMPACT%2Fveda-docs&urlpath=lab%2Ftree%2Fveda-docs%2Fexample-notebooks%2Fno2-single-item-vizualization.ipynb&branch=no2-single-item-viz"
+    label: Run example notebook
+    title: 'Interactive session in VEDA 2i2c JupyterHub (requires account)'
 media:
   src: ::file ./odiac--dataset-cover.jpeg
   alt: White smoke coming from building
@@ -13,9 +16,12 @@ media:
     name: Marcin Jozwiak
     url: https://unsplash.com/photos/T-eDxGcn-Ok
 thematics:
+  - air-quality
   - co2
 sources:
-  - nasa
+  - NASA
+product:
+  - satellite
 layers:
   - id: co2-emissions
     stacCol: odiac-fossil-fuel-co2-emissions-2022
@@ -43,8 +49,8 @@ layers:
       unit: 
         label: gC/m²/d
       type: gradient
-      min: -10
-      max: 300
+      min: -10 gC/m²/d
+      max: 300 gC/m²/d
       stops:
         - '#60007d'
         - '#30137d'
