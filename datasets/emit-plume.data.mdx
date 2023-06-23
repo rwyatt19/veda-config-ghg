@@ -29,6 +29,8 @@ layers:
       - 8
       - 20
     sourceParams:
+      resampling: bilinear
+      bidx: 1
       assets: ch4-plume-emissions
       colormap_name: plasma
       rescale:
@@ -88,7 +90,6 @@ layers:
     Jet Propulsion Laboratory / NASA
     
     ## Acknowledgment
-    The ODIAC (Open-source Data Inventory for Anthropogenic CO₂) is a global high-resolution emission data product for fossil fuel carbon dioxide (CO2) emissions, originally developed under the Greenhouse gas Observing SATellite (GOSAT) project at the National Institute for Environmental Studies (NIES), Japan. ODIAC pioneered the combined use of space-based nighttime light data and individual power plant emission/location profiles to estimate the global spatial extent of fossil fuel CO2 emissions. With the innovative emission modeling approach, ODIAC achieved the fine picture of global fossil fuel CO2 emissions at a 1x1km, possibly the most beautiful global picture of human-made emissions. As seen in a number of publications in the literature, the ODIAC emission data product has been widely used by the international research community for a variety of research applications (e.g. CO2 flux inversion, urban emission estimation, and observing system design experiments). 
     
     ## Disclaimer
     All data provided in the GHG Center has been transformed from the original format into Cloud Optimized GeoTIFF (COG). Careful quality checks are used to ensure data transformation has been performed correctly.[Link](https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb)
