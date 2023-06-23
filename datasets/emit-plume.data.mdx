@@ -4,8 +4,8 @@ name: Methane plumes
 description: High-spatial resolution CH4 emissions data product
 usage:
   - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
-    label: View example notebook
-    title: 'Static view in VEDA documentation'
+    label: Notebook to read, visualize, and explore data statistics
+    title: 'EMIT CH4 emissions data notebook'
 media:
   src: ::file ./emit-plume--cover.jpeg
   alt: White smoke coming from building
@@ -46,8 +46,8 @@ layers:
       unit: 
         label: ppm m
       type: gradient
-      min: 1 ppm m
-      max: +1500 ppm m
+      min: 1
+      max: +1500
       stops:
         - '#3e049c'
         - '#6300a7'
@@ -63,22 +63,35 @@ layers:
 
 <Block>
   <Prose>
-    ## Methane ‘Super-Emitters’
     The EMIT instrument builds upon NASA’s long history of developing advanced imaging spectrometers for new science and applications. EMIT launched to the International Space Station (ISS) on July 14, 2022.
     The data shows high-confidence research grade methane plumes from point source emitters - updated as they are identified - in keeping with JPL Open Science and Open Data policy.
 
+    - **Temporal extent:** 2022/08/01 to 2023/05/31  
+    - **Temporal resolution:** Daily    
+    - **Spatial extent:** Global    
+    - **Spatial resolution:**    
+    - **Data units:** ppm m   
+    - **Data type:** Research
+
     ## Data Product Citation
+    1. 
 
     ## Related Publications
+    1. 
     
     ## License
-
+    CC BY 1.0 (Creative Commons Attribution 1.0 International)
+    
     ## Contact
     Robert O. Green
     Principal Investigator
     Jet Propulsion Laboratory / NASA
     
     ## Acknowledgment
-
+    The ODIAC (Open-source Data Inventory for Anthropogenic CO₂) is a global high-resolution emission data product for fossil fuel carbon dioxide (CO2) emissions, originally developed under the Greenhouse gas Observing SATellite (GOSAT) project at the National Institute for Environmental Studies (NIES), Japan. ODIAC pioneered the combined use of space-based nighttime light data and individual power plant emission/location profiles to estimate the global spatial extent of fossil fuel CO2 emissions. With the innovative emission modeling approach, ODIAC achieved the fine picture of global fossil fuel CO2 emissions at a 1x1km, possibly the most beautiful global picture of human-made emissions. As seen in a number of publications in the literature, the ODIAC emission data product has been widely used by the international research community for a variety of research applications (e.g. CO2 flux inversion, urban emission estimation, and observing system design experiments). 
+    
+    ## Disclaimer
+    All data provided in the GHG Center has been transformed from the original format into Cloud Optimized GeoTIFF (COG). Careful quality checks are used to ensure data transformation has been performed correctly.[Link](https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb)
+  
   </Prose>
 </Block>
