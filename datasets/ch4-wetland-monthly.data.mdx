@@ -30,11 +30,11 @@ layers:
       - 20
     sourceParams:
       assets: ch4-wetlands-emissions
-      colormap_name: rainbow
+      colormap_name: plasma
       rescale:
-        - 0.1
+        - 0
         - 2
-      nodata: 0
+      nodata: -9999
     compare:
       datasetId: wetland-ch4-emissions
       layerId: ch4-wetlands-emissions
@@ -48,13 +48,21 @@ layers:
       min: 0 g CH4 m-2 mon-1
       max: 2 g CH4 m-2 mon-1
       stops:
-        - '#ffffff'
-        - '#ffffff'
-        - '#ffffff'
-        - '#7ac300'
-        - '#f2ce00'
-        - '#ef6a01'
-        - '#cc0019' 
+        - '#310597'
+        - '#4c02a1'
+        - '#6600a7'
+        - '#7e03a8'
+        - '#9511a1'
+        - '#aa2395'
+        - '#bc3587'
+        - '#cc4778'
+        - '#da5a6a'
+        - '#e66c5c'
+        - '#f0804e'
+        - '#f89540'
+        - '#fdac33'
+        - '#fdc527'
+        - '#f8df25'
   - id: ch4-wetlands-emissions-d
     stacCol: nasa-gsfc-ch4-wetlands-daily-emissions
     name: Wetlands Ch4 Emissions (Daily)
