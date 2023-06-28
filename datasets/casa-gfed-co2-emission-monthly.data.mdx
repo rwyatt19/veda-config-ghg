@@ -1,7 +1,9 @@
 ---
 id: land-atmoshphere-co2-emissions-monthly-2022
 name: GEOS-Carb CASA-GFED3 Land Carbon Flux Products
-description: GEOS-Carb CASA-GFED Monthly Fire Fuel, NPP, Rh, NEE Fluxes at 0.5 degree x 0.5 degree data product
+description: This product provides Monthly average Net Primary Production (NPP), heterotrophic respiration (Rh), wildfire emissions (FIRE), and
+fuel wood burning emissions (FUEL) derived from the Carnegie-Ames-Stanford-Approach – Global Fire Emissions Database version 3 (CASA-
+GFED3) model.
 usage:
   - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
     label: View example notebook
@@ -20,8 +22,8 @@ sources:
 product:
   - satellite
 layers:
-  - id: co2-emissions
-    stacCol: casa-gfed-co2-emissions
+  - id: casa-gfed-co2-flux
+    stacCol: nasa-casa-gfed-co2-flux
     name: Fossil Fuel CO₂ Emissions
     type: raster
     description: Monthly CO₂ emissions from fossil fuel combustion, cement production and gas flaring.
@@ -29,15 +31,15 @@ layers:
       - 0
       - 20
     sourceParams:
-      assets: co2-emissions
+      assets: npp
       colormap_name: rainbow
       rescale:
-        - -10
-        - 300
+        - 0
+        - 0.5
       nodata: 0
     compare:
-      datasetId: odiac-fossil-fuel-co2-emissions-2022
-      layerId: co2-emissions
+      datasetId: casa-gfed-co2-flux
+      layerId: npp
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -46,8 +48,8 @@ layers:
       unit: 
         label: gC/m²/d
       type: gradient
-      min: -10 gC/m²/d
-      max: 300 gC/m²/d
+      min: 0
+      max: 0.2
       stops:
         - '#60007d'
         - '#30137d'
@@ -60,24 +62,36 @@ layers:
 
 <Block>
   <Prose>
-    This product provides Monthly average Net Primary Production (NPP), heterotrophic respiration (Rh), wildfire emissions (FIRE), and
-    fuel wood burning emissions (FUEL) derived from the Carnegie-Ames-Stanford-Approach – Global Fire Emissions Database version 3 (CASA-
-    GFED3) model.
-
+    ## GEOS-Carb CASA-GFED Monthly Fire Fuel NPP Rh NEE Fluxes
     The NASA Carbon Monitoring System (CMS) is designed to make significant contributions in characterizing, quantifying, understanding, and predicting the evolution of global carbon sources and sinks through improved monitoring of carbon stocks and fluxes. The System will use the full range of NASA satellite observations and modeling/analysis capabilities to establish the accuracy, quantitative uncertainties, and utility of products for supporting national and international policy, regulatory, and management activities. CMS will maintain a global emphasis while providing finer scale regional information, utilizing space-based and surface-based data and will rapidly initiate generation and distribution of products both for user evaluation and to inform near-term policy development and planning.
     
-    ## Data Product Citation
-    Lesley Ott (2020), GEOS-Carb CASA-GFED Monthly Fire Fuel NPP Rh NEE Fluxes 0.5 degree x 0.5 degree V3, Greenbelt, MD, USA, Goddard Earth Sciences Data and Information Services Center (GES DISC), Accessed: [Data Access Date], 10.5067/03147VMJE8J9
-
-    ## Related Publications
+    - **Temporal extent:** 2003/01/01 - 2017/12/31    
+    - **Temporal resolution:** Monthly    
+    - **Spatial extent:** Global    
+    - **Spatial resolution:** 0.5 deg x 0. 5deg    
+    - **Data units:**     
+    - **Data type:** Research
     
-    ## License
+    ## Source Data Product Citation
+    Lesley Ott (2020), GEOS-Carb CASA-GFED Monthly Fire Fuel NPP Rh NEE Fluxes 0.5 degree x 0.5 degree V3, Greenbelt, MD, USA, Goddard Earth Sciences Data and Information Services Center (GES DISC), Accessed: [Data Access Date], 10.5067/03147VMJE8J9
 
     ## Contact
     Lesley Ott (NASA/GSFC)
     Lead Scientist
+    
+    ## Related Publications
+    
+    ## License
+    CC BY 4.0 (Creative Commons Attribution 4.0 International)
 
     ## Acknowledgment
+
+    ## Disclaimer
+    All data provided in the GHG Center has been transformed from the original format into Cloud Optimized GeoTIFF (COG). Careful quality checks are used to ensure data transformation has been performed correctly.
+    
+    [Data Transformation](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/NASA_GSFC_wetlands_transformation.py)
+    
+    [GHG Center Data Intake Processing and Verification Report](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/processing_and_confirmation_reports/ODIAC_Processing%20and%20Confirmation%20Report%20.pdf)
 
   </Prose>
 </Block>
