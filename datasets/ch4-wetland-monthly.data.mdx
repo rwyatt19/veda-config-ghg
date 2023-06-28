@@ -30,10 +30,11 @@ layers:
       - 20
     sourceParams:
       assets: ch4-wetlands-emissions
-      colormap_name: plasma
+      colormap_name: magma
       rescale:
         - 0
         - 2
+      nodata: 0
     compare:
       datasetId: wetland-ch4-emissions
       layerId: ch4-wetlands-emissions
@@ -44,24 +45,15 @@ layers:
     legend:
       unit: g CH4 m-2 mon-1
       type: gradient
-      min: 0 g CH4 m-2 mon-1
-      max: 2 g CH4 m-2 mon-1
+      min: 0
+      max: 2
       stops:
-        - '#310597'
-        - '#4c02a1'
-        - '#6600a7'
-        - '#7e03a8'
-        - '#9511a1'
-        - '#aa2395'
-        - '#bc3587'
-        - '#cc4778'
-        - '#da5a6a'
-        - '#e66c5c'
-        - '#f0804e'
-        - '#f89540'
-        - '#fdac33'
-        - '#fdc527'
-        - '#f8df25'
+        - '#2c115f'
+        - '#721f81'
+        - '#b73779'
+        - '#f1605d'
+        - '#feb078'
+
   - id: ch4-wetlands-emissions-d
     stacCol: nasa-gsfc-ch4-wetlands-daily-emissions
     name: Wetlands Ch4 Emissions (Daily)
