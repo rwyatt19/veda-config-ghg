@@ -1,5 +1,5 @@
 ---
-id: wetland-ch4-emissions-monthly-2022
+id: wetland-ch4-emissions
 name: Wetlands CH4 emission monthly
 description: High-spatial resolution CH4 emissions data product
 usage:
@@ -36,7 +36,7 @@ layers:
         - 2
       nodata: 0
     compare:
-      datasetId: wetland-ch4-emissions-monthly-2022
+      datasetId: wetland-ch4-emissions
       layerId: ch4-wetlands-emissions
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -55,6 +55,41 @@ layers:
         - '#f2ce00'
         - '#ef6a01'
         - '#cc0019'
+  - id: ch4-wetlands-emissions-d
+    stacCol: nasa-gsfc-ch4-wetlands-daily-emissions
+    name: Wetlands Ch4 Emissions (Daily)
+    type: raster
+    description: Daily CH4 emissions from wetlands
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: ch4-wetlands-emissions
+      colormap_name: rainbow
+      rescale:
+        - 0
+        - 2
+      nodata: 0
+    compare:
+      datasetId: wetland-ch4-emissions
+      layerId: ch4-wetlands-emissions-d
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }
+    legend:
+      unit: g CH4 m-2 mon-1
+      type: gradient
+      min: 0 g CH4 m-2 mon-1
+      max: 2 g CH4 m-2 mon-1
+      stops:
+        - '#60007d'
+        - '#30137d'
+        - '#1960ae'
+        - '#7ac300'
+        - '#f2ce00'
+        - '#ef6a01'
+        - '#cc0019'      
 ---
 
 <Block>
