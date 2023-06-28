@@ -1,6 +1,6 @@
 ---
 id: wetland-ch4-emissions
-name: Wetlands CH4 emission monthly
+name: Wetlands CH4 emissions
 description: High-spatial resolution CH4 emissions data product
 usage:
   - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
@@ -48,6 +48,7 @@ layers:
       min: 0 g CH4 m-2 mon-1
       max: 2 g CH4 m-2 mon-1
       stops:
+        - '#00FFFFFF'
         - '#60007d'
         - '#30137d'
         - '#1960ae'
@@ -81,7 +82,7 @@ layers:
       unit: g CH4 m-2 mon-1
       type: gradient
       min: 0 g CH4 m-2 mon-1
-      max: 2 g CH4 m-2 mon-1
+      max: 0.5 g CH4 m-2 mon-1
       stops:
         - '#60007d'
         - '#30137d'
