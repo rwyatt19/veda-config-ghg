@@ -1,17 +1,20 @@
 ---
 id: wetland-ch4-emissions
-name: Wetlands CH4 emissions
-description: High-spatial resolution CH4 emissions data product
+name: CH4 Wetland Emissions (LPJ-wsl)
+description: Wetland methane (CH4) emissions data produced using the Lund–Potsdam–Jena Dynamic Global Vegetation Model (LPJ-DGVM) Wald Schnee und Landscaft version (LPJ-wsl).
 usage:
+  - url: 'https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/NASA_GSFC_wetlands_transformation.py'
+    label: Notebook to trasnform netcdf to COG
+    title: 'ODIAC CO2 emissions data trasnsformation notebook'
   - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
     label: View example notebook
     title: 'Static view in VEDA documentation'
 media:
   src: ::file ./ch4-wetland--cover.jpeg
-  alt: White smoke coming from building
+  alt: ch4 emission from wetlands
   author:
-    name: Marcin Jozwiak
-    url: https://unsplash.com/photos/T-eDxGcn-Ok
+    name: Mark SubbaRao (NASA/GSFC)
+    url: https://svs.gsfc.nasa.gov/5054
 thematics:
   - air-quality
   - co2
@@ -22,9 +25,9 @@ product:
 layers:
   - id: ch4-wetlands-emissions
     stacCol: nasa-gsfc-ch4-wetlands-emissions
-    name: Wetlands Ch4 Emissions (Monthly)
+    name: Wetlands CH4 Emissions (Monthly)
     type: raster
-    description: Monthly CH4 emissions from wetlands
+    description: Monthly CH4 emissions from wetlands constructed using the LBJ-wsl model version
     zoomExtent:
       - 0
       - 20
@@ -43,9 +46,9 @@ layers:
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
         }
     legend:
-      unit: g CH4 m-2 mon-1
+      unit: g m-2 mon-1
       type: gradient
-      min: 0
+      min: 0.1
       max: 2
       stops:
         - '#2c115f'
@@ -56,18 +59,19 @@ layers:
 
   - id: ch4-wetlands-emissions-d
     stacCol: nasa-gsfc-ch4-wetlands-daily-emissions
-    name: Wetlands Ch4 Emissions (Daily)
+    name: Wetlands CH4 Emissions (Daily)
     type: raster
-    description: Daily CH4 emissions from wetlands
+    description: Daily CH4 emissions from wetlands constructed using the LBJ-wsl model version
+
     zoomExtent:
       - 0
       - 20
     sourceParams:
       assets: ch4-wetlands-emissions
-      colormap_name: rainbow
+      colormap_name: magma
       rescale:
         - 0
-        - 2
+        - 0.2
       nodata: 0
     compare:
       datasetId: wetland-ch4-emissions
@@ -77,18 +81,17 @@ layers:
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
         }
     legend:
-      unit: g CH4 m-2 mon-1
+    legend:
+      unit: g m-2 daily-1
       type: gradient
-      min: 0 g CH4 m-2 mon-1
-      max: 0.3 g CH4 m-2 mon-1
+      min: 0
+      max: 0.2
       stops:
-        - '#60007d'
-        - '#30137d'
-        - '#1960ae'
-        - '#7ac300'
-        - '#f2ce00'
-        - '#ef6a01'
-        - '#cc0019'      
+        - '#2c115f'
+        - '#721f81'
+        - '#b73779'
+        - '#f1605d'
+        - '#feb078'     
 ---
 
 <Block>
