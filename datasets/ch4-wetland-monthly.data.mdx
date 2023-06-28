@@ -32,7 +32,7 @@ layers:
       assets: ch4-wetlands-emissions
       colormap_name: rainbow
       rescale:
-        - 0
+        - 0.1
         - 2
       nodata: 0
     compare:
@@ -48,14 +48,13 @@ layers:
       min: 0 g CH4 m-2 mon-1
       max: 2 g CH4 m-2 mon-1
       stops:
-        - '#00000000'
-        - '#00000000'
-        - '#00000000'
-        - '#00000000'
+        - '#60007d'
+        - '#30137d'
+        - '#1960ae'
         - '#7ac300'
         - '#f2ce00'
         - '#ef6a01'
-        - '#cc0019'
+        - '#cc0019' 
   - id: ch4-wetlands-emissions-d
     stacCol: nasa-gsfc-ch4-wetlands-daily-emissions
     name: Wetlands Ch4 Emissions (Daily)
