@@ -40,7 +40,7 @@ layers:
       nodata: 0
     compare:
       datasetId: nasa-sedac-gridded-population-density-yearly
-      layerId: nasa-sedac-population-2000
+      layerId: nasa-sedac-population-2020
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -176,7 +176,7 @@ layers:
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
-        }
+        }           
     legend:
       unit:
         label: persons per sq km
