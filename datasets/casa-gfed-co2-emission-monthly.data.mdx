@@ -36,8 +36,8 @@ layers:
         - 0.5
       nodata: 0
     compare:
-      datasetId: casa-gfed-co2-flux
-      layerId: npp
+      datasetId: land-atmoshphere-co2-emissions-monthly-2022
+      layerId: casa-gfed-co2-flux
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
