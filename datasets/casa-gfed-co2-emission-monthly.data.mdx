@@ -22,15 +22,15 @@ product:
 layers:
   - id: casa-gfed-co2-flux
     stacCol: nasa-casa-gfed-co2-flux
-    name: Fossil Fuel CO₂ Emissions
+    name: Net Primary Production
     type: raster
-    description: Monthly CO₂ emissions from fossil fuel combustion, cement production and gas flaring.
+    description: Monthly average net primary production
     zoomExtent:
       - 0
       - 20
     sourceParams:
       assets: npp
-      colormap_name: rainbow
+      colormap_name: plasma
       rescale:
         - 0
         - 0.5
@@ -49,13 +49,201 @@ layers:
       min: 0
       max: 0.2
       stops:
-        - '#60007d'
-        - '#30137d'
-        - '#1960ae'
-        - '#7ac300'
-        - '#f2ce00'
-        - '#ef6a01'
-        - '#cc0019'
+        - '#310597'
+        - '#4c02a1'
+        - '#6600a7'
+        - '#7e03a8'
+        - '#9511a1'
+        - '#aa2395'
+        - '#bc3587'
+        - '#cc4778'
+        - '#da5a6a'
+        - '#e66c5c'
+        - '#f0804e'
+        - '#f89540'
+        - '#fdac33'
+        - '#fdc527'
+        - '#f8df25'
+  - id: casa-gfed-co2-flux
+    stacCol: nasa-casa-gfed-co2-flux
+    name: Heterotrophic Respiration
+    type: raster
+    description: Monthly average heterotrophic respiration
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: npp
+      colormap_name: plasma
+      rescale:
+        - 0
+        - 0.5
+      nodata: 0
+    compare:
+      datasetId: land-atmoshphere-co2-emissions-monthly-2022
+      layerId: casa-gfed-co2-flux
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }
+    legend:
+      unit: 
+        label: kg m-2 mon-1
+      type: gradient
+      min: 0
+      max: 0.2
+      stops:
+      stops:
+        - '#310597'
+        - '#4c02a1'
+        - '#6600a7'
+        - '#7e03a8'
+        - '#9511a1'
+        - '#aa2395'
+        - '#bc3587'
+        - '#cc4778'
+        - '#da5a6a'
+        - '#e66c5c'
+        - '#f0804e'
+        - '#f89540'
+        - '#fdac33'
+        - '#fdc527'
+        - '#f8df25'     
+   - id: casa-gfed-co2-flux
+    stacCol: nasa-casa-gfed-co2-flux
+    name: Net Ecosystem Exchange
+    type: raster
+    description: Monthly average net ecosystem exchange
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: npp
+      colormap_name: plasma
+      rescale:
+        - 0
+        - 0.5
+      nodata: 0
+    compare:
+      datasetId: land-atmoshphere-co2-emissions-monthly-2022
+      layerId: casa-gfed-co2-flux
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }
+    legend:
+      unit: 
+        label: kg m-2 mon-1
+      type: gradient
+      min: 0
+      max: 0.2
+      stops:
+      stops:
+        - '#310597'
+        - '#4c02a1'
+        - '#6600a7'
+        - '#7e03a8'
+        - '#9511a1'
+        - '#aa2395'
+        - '#bc3587'
+        - '#cc4778'
+        - '#da5a6a'
+        - '#e66c5c'
+        - '#f0804e'
+        - '#f89540'
+        - '#fdac33'
+        - '#fdc527'
+        - '#f8df25'     
+   - id: casa-gfed-co2-flux
+    stacCol: nasa-casa-gfed-co2-flux
+    name: Fire Emissions
+    type: raster
+    description: Monthly average fire emissions
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: npp
+      colormap_name: plasma
+      rescale:
+        - 0
+        - 0.5
+      nodata: 0
+    compare:
+      datasetId: land-atmoshphere-co2-emissions-monthly-2022
+      layerId: casa-gfed-co2-flux
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }
+    legend:
+      unit: 
+        label: kg m-2 mon-1
+      type: gradient
+      min: 0
+      max: 0.2
+      stops:
+      stops:
+        - '#310597'
+        - '#4c02a1'
+        - '#6600a7'
+        - '#7e03a8'
+        - '#9511a1'
+        - '#aa2395'
+        - '#bc3587'
+        - '#cc4778'
+        - '#da5a6a'
+        - '#e66c5c'
+        - '#f0804e'
+        - '#f89540'
+        - '#fdac33'
+        - '#fdc527'
+        - '#f8df25'     
+   - id: casa-gfed-co2-flux
+    stacCol: nasa-casa-gfed-co2-flux
+    name: Fuel Emissions
+    type: raster
+    description: Monthly average fuel emissions
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: npp
+      colormap_name: plasma
+      rescale:
+        - 0
+        - 0.5
+      nodata: 0
+    compare:
+      datasetId: land-atmoshphere-co2-emissions-monthly-2022
+      layerId: casa-gfed-co2-flux
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }
+    legend:
+      unit: 
+        label: kg m-2 mon-1
+      type: gradient
+      min: 0
+      max: 0.2
+      stops:
+      stops:
+        - '#310597'
+        - '#4c02a1'
+        - '#6600a7'
+        - '#7e03a8'
+        - '#9511a1'
+        - '#aa2395'
+        - '#bc3587'
+        - '#cc4778'
+        - '#da5a6a'
+        - '#e66c5c'
+        - '#f0804e'
+        - '#f89540'
+        - '#fdac33'
+        - '#fdc527'
+        - '#f8df25'                      
 ---
 
 <Block>
