@@ -20,7 +20,7 @@ sources:
 product:
   - satellite
 layers:
-  - id: casa-gfed-co2-flux
+  - id: casa-gfed-co2-flux-npp
     stacCol: nasa-casa-gfed-co2-flux
     name: Net Primary Production
     type: raster
@@ -37,7 +37,7 @@ layers:
       nodata: 0
     compare:
       datasetId: land-atmoshphere-co2-emissions-monthly-2022
-      layerId: casa-gfed-co2-flux
+      layerId: casa-gfed-co2-flux-npp
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -64,7 +64,7 @@ layers:
         - '#fdac33'
         - '#fdc527'
         - '#f8df25'
-  - id: casa-gfed-co2-flux
+  - id: casa-gfed-co2-flux-hr
     stacCol: nasa-casa-gfed-co2-flux
     name: Heterotrophic Respiration
     type: raster
@@ -81,7 +81,7 @@ layers:
       nodata: 0
     compare:
       datasetId: land-atmoshphere-co2-emissions-monthly-2022
-      layerId: casa-gfed-co2-flux
+      layerId: casa-gfed-co2-flux-hr
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -108,7 +108,7 @@ layers:
         - '#fdac33'
         - '#fdc527'
         - '#f8df25'     
-  - id: casa-gfed-co2-flux
+  - id: casa-gfed-co2-flux-nee
     stacCol: nasa-casa-gfed-co2-flux
     name: Net Ecosystem Exchange
     type: raster
@@ -125,7 +125,7 @@ layers:
       nodata: 0
     compare:
       datasetId: land-atmoshphere-co2-emissions-monthly-2022
-      layerId: casa-gfed-co2-flux
+      layerId: casa-gfed-co2-flux-nee
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -152,7 +152,7 @@ layers:
         - '#fdac33'
         - '#fdc527'
         - '#f8df25'     
-  - id: casa-gfed-co2-flux
+  - id: casa-gfed-co2-flux-fe
     stacCol: nasa-casa-gfed-co2-flux
     name: Fire Emissions
     type: raster
@@ -169,7 +169,7 @@ layers:
       nodata: 0
     compare:
       datasetId: land-atmoshphere-co2-emissions-monthly-2022
-      layerId: casa-gfed-co2-flux
+      layerId: casa-gfed-co2-flux-fe
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -196,7 +196,7 @@ layers:
         - '#fdac33'
         - '#fdc527'
         - '#f8df25'     
-  - id: casa-gfed-co2-flux
+  - id: casa-gfed-co2-flux-fuel
     stacCol: nasa-casa-gfed-co2-flux
     name: Fuel Emissions
     type: raster
@@ -213,7 +213,7 @@ layers:
       nodata: 0
     compare:
       datasetId: land-atmoshphere-co2-emissions-monthly-2022
-      layerId: casa-gfed-co2-flux
+      layerId: casa-gfed-co2-flux-fuel
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
