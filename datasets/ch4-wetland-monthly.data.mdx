@@ -5,10 +5,10 @@ description: Wetland methane (CH4) emissions data produced using the Lund–Pots
 usage:
   - url: 'https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/NASA_GSFC_wetlands_transformation.py'
     label: Notebook to trasnform netcdf to COG
-    title: 'ODIAC CO2 emissions data trasnsformation notebook'
-  - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
-    label: View example notebook
-    title: 'Static view in VEDA documentation'
+    title: 'Wetland methane emissions data trasnsformation notebook'
+  - url: 'https://github.com/NASA-IMPACT/GHGC_docs/blob/main/user_data_notebooks/wetland_methane_emissions.ipynb'
+    label: Notebook to read, visualize, and explore data statistics
+    title: 'Wetland methane emissions data notebook'
 media:
   src: ::file ./ch4-wetland--cover.jpeg
   alt: aa
@@ -102,7 +102,7 @@ layers:
     - **Temporal resolution:** Monthly and Daily    
     - **Spatial extent:** Global    
     - **Spatial resolution:** 0.5 deg x 0. 5deg    
-    - **Data units:** g/m²/mon and  g/m²/day      
+    - **Data units:** g m-2 mon-1 and  g m-2 day-1      
     - **Data type:** Research
     
     ## Source Data Product Citation
@@ -110,7 +110,7 @@ layers:
     ## Contact
     - Dr. Lesley Ott (NASA contact point)
     
-    ## Related Publications
+    ## Relevant Publications
     Zhang, Z., Zimmermann, N. E., Stenke, A., Li, X., Hodson, E. L., Zhu, G., ... & Poulter, B. (2017). Emerging role of wetland methane emissions in driving 21st century climate change. Proceedings of the National Academy of Sciences, 114(36), 9647-9652.
     
     ## License
@@ -121,10 +121,11 @@ layers:
     ## Disclaimer
     All data provided in the GHG Center has been transformed from the original format into Cloud Optimized GeoTIFF (COG). Careful quality checks are used to ensure data transformation has been performed correctly.
     
-    [Data Transformation](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/NASA_GSFC_wetlands_transformation.py)
-    
-    [GHG Center Data Intake Processing and Verification Report](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/processing_and_confirmation_reports/ODIAC_Processing%20and%20Confirmation%20Report%20.pdf)
-
+    ## Data Stewardship
+    -[Data Management Report]
+    -[Data Transformation Process](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/NASA_GSFC_wetlands_transformation.py)
+    -[GHG Center Data Intake Processing and Verification Report](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/processing_and_confirmation_reports/ODIAC_Processing%20and%20Confirmation%20Report%20.pdf)
+    -[Notes]
 
   </Prose>
 </Block>

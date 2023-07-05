@@ -3,9 +3,12 @@ id: epa-emissions-annual-tests
 name: Methane Emissions
 description: Gridded inventory of US anthropogenic methane emissions with 0.1° × 0.1° spatial resolution at annual, monthly and daily scale.
 usage:
-  - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
-    label: View example notebook
-    title: 'Static view in VEDA documentation'
+  - url: 'https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/ODIAC_fossil_fuel_geotiff_transformation.py'
+    label: Notebook to trasnform GeoTIFF to COG
+    title: 'EPA methane emissions data trasnsformation notebook'
+  - url: 'https://github.com/NASA-IMPACT/GHGC_docs/blob/main/user_data_notebooks/ODIAC_CO2_data_notebook.ipynb'
+    label: Notebook to read, visualize, and explore data statistics
+    title: 'EPA methane emissions data notebook'
 media:
   src: ::file ./epa-annual--cover.jpg
   alt: aa
@@ -451,7 +454,7 @@ layers:
     ## Contact
     - Maasakkers, J.D (EPA contact point)
    
-    ## Related Publications
+    ## Relevant Publications
     Maasakkers, J. D., Jacob, D. J., Sulprizio, M. P., Turner, A. J., Weitz, M., Wirth, T., ... & Fischer, M. L. (2016). Gridded national inventory of US methane emissions. Environmental science & technology, 50(23), 13123-13133.
 
     ## Acknowledgment
@@ -461,6 +464,12 @@ layers:
 
     ## Disclaimer
     All data provided in the GHG Center has been transformed from the original format into Cloud Optimized GeoTIFF (COG). Careful quality checks are used to ensure data transformation has been performed correctly.  
-
+    
+    ## Data Stewardship
+    -[Data Management Report]
+    -[Data Transformation Process](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/NASA_GSFC_wetlands_transformation.py)
+    -[GHG Center Data Intake Processing and Verification Report](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/processing_and_confirmation_reports/ODIAC_Processing%20and%20Confirmation%20Report%20.pdf)
+    -[Notes]
+    
   </Prose>
 </Block>
