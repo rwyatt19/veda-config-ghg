@@ -5,16 +5,14 @@ description: This product provides Monthly average Net Primary Production (NPP),
 usage:
   - url: 'https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/NASA_GSFC_wetlands_transformation.py'
     label: Notebook to trasnform netcdf to COG
-    title: 'ODIAC CO2 emissions data trasnsformation notebook'
+    title: 'Carbon natural flux data trasnsformation notebook'
   - url: 'https://github.com/NASA-IMPACT/veda-docs/blob/no2-single-item-viz/example-notebooks/no2-single-item-vizualization.ipynb'
-    label: View example notebook
-    title: 'Static view in VEDA documentation'
+    label: Notebook to read, visualize, and explore data statistics
+    title: 'Carbon natural flux data notebook'
 media:
   src: ::file ./geos-casa-gfed--cover.jpg
-  alt: White smoke coming from building
   author:
-    name: Marcin Jozwiak
-    url: https://unsplash.com/photos/T-eDxGcn-Ok
+    name: Dan Meyers
 thematics:
   - air-quality
   - co2
@@ -23,7 +21,7 @@ sources:
 product:
   - satellite
 layers:
-  - id: casa-gfed-co2-flux-npp
+  - id: casa-gfed-co2-flux
     stacCol: nasa-casa-gfed-co2-flux
     name: Net Primary Production
     type: raster
@@ -40,7 +38,7 @@ layers:
       nodata: 0
     compare:
       datasetId: land-atmoshphere-co2-emissions-monthly-2022
-      layerId: casa-gfed-co2-flux-npp
+      layerId: casa-gfed-co2-flux
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
