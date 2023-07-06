@@ -11,7 +11,7 @@ usage:
     title: 'Wetland methane emissions data notebook'
 media:
   src: ::file ./ch4-wetland--cover.jpeg
-  alt: aa
+  alt: svs visualiztion
   author:
     name: Mark SubbaRao (NASA/GSFC)
     url: https://svs.gsfc.nasa.gov/5054
@@ -25,9 +25,9 @@ product:
 layers:
   - id: ch4-wetlands-emissions
     stacCol: nasa-gsfc-ch4-wetlands-emissions
-    name: Wetlands CH4 Emissions (Monthly)
+    name: Wetlands CH<sub>4</sub> Emissions (Monthly)
     type: raster
-    description: Monthly CH4 emissions from wetlands constructed using the LBJ-wsl model version
+    description: Monthly CH<sub>4</sub> emissions from wetlands constructed using the LBJ-wsl model version
     zoomExtent:
       - 0
       - 20
@@ -46,7 +46,7 @@ layers:
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
         }
     legend:
-      unit: g m-2 mon-1
+      unit: g m<sup>-2</sup> mon<sup>-1</sup>
       type: gradient
       min: 0
       max: 2
@@ -61,7 +61,7 @@ layers:
     stacCol: nasa-gsfc-ch4-wetlands-daily-emissions
     name: Wetlands CH4 Emissions (Daily)
     type: raster
-    description: Daily CH4 emissions from wetlands constructed using the LBJ-wsl model version
+    description: Daily CH<sub>4</sub> emissions from wetlands constructed using the LBJ-wsl model version
 
     zoomExtent:
       - 0
@@ -81,7 +81,7 @@ layers:
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
         }
     legend:
-      unit: g m-2 daily-1
+      unit: g m<sup>-2</sup> daily<sup>-1</sup>
       type: gradient
       min: 0
       max: 0.2
@@ -102,7 +102,7 @@ layers:
     - **Temporal resolution:** Monthly and Daily    
     - **Spatial extent:** Global    
     - **Spatial resolution:** 0.5 deg x 0. 5deg    
-    - **Data units:** g m-2 mon-1 and  g m-2 day-1      
+    - **Data units:** g m<sup>-2</sup> mon<sup>-1</sup> and  g m<sup>-2</sup> daily<sup>-1</sup>      
     - **Data type:** Research
     
     ## Source Data Product Citation
