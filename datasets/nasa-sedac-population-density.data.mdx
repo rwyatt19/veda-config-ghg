@@ -22,16 +22,16 @@ sources:
 product:
   - satellite
 layers:
-  - id: nasa-sedac-population-2000
+  - id: nasa-sedac-population
     stacCol: nasa-sedac-population-density
-    name: Population Density - 2000
+    name: Population Density
     type: raster
-    description: Gridded population of the world for the year 2000
+    description: Gridded population of the world (2000,2005,2010,2015,2020)
     zoomExtent:
       - 0
       - 20
     sourceParams:
-      assets: 2000
+      assets: population-density
       colormap_name: plasma
       rescale:
         - 0
@@ -39,7 +39,7 @@ layers:
       nodata: 0
     compare:
       datasetId: nasa-sedac-gridded-population-density-yearly
-      layerId: nasa-sedac-population-2020
+      layerId: nasa-sedac-population
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -65,183 +65,7 @@ layers:
         - '#f89540'
         - '#fdac33'
         - '#fdc527'
-        - '#f8df25'
-  - id: nasa-sedac-population-2005
-    stacCol: nasa-sedac-population-density
-    name: Population Density - 2005
-    type: raster
-    description: Gridded population of the world for the year 2005
-    zoomExtent:
-      - 0
-      - 20
-    sourceParams:
-      assets: 2005
-      colormap_name: plasma
-      rescale:
-        - 0
-        - 1000
-      nodata: 0
-    compare:
-      datasetId: nasa-sedac-gridded-population-density-yearly
-      layerId: nasa-sedac-population-2005
-      mapLabel: |
-        ::js ({ dateFns, datetime, compareDatetime }) => {
-          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
-        }
-    legend:
-      unit:
-        label: persons per sq km
-      type: gradient
-      min: 0
-      max: 1000
-      stops:
-        - '#310597'
-        - '#4c02a1'
-        - '#6600a7'
-        - '#7e03a8'
-        - '#9511a1'
-        - '#aa2395'
-        - '#bc3587'
-        - '#cc4778'
-        - '#da5a6a'
-        - '#e66c5c'
-        - '#f0804e'
-        - '#f89540'
-        - '#fdac33'
-        - '#fdc527'
-        - '#f8df25'     
-  - id: nasa-sedac-population-2010
-    stacCol: nasa-sedac-population-density
-    name: Population Density - 2010
-    type: raster
-    description: Gridded population of the world for the year 2010
-    zoomExtent:
-      - 0
-      - 20
-    sourceParams:
-      assets: 2010
-      colormap_name: plasma
-      rescale:
-        - 0
-        - 1000
-      nodata: 0
-    compare:
-      datasetId: nasa-sedac-gridded-population-density-yearly
-      layerId: nasa-sedac-population-2010
-      mapLabel: |
-        ::js ({ dateFns, datetime, compareDatetime }) => {
-          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
-        }
-    legend:
-      unit:
-        label: persons per sq km
-      type: gradient
-      min: 0
-      max: 1000
-      stops:
-        - '#310597'
-        - '#4c02a1'
-        - '#6600a7'
-        - '#7e03a8'
-        - '#9511a1'
-        - '#aa2395'
-        - '#bc3587'
-        - '#cc4778'
-        - '#da5a6a'
-        - '#e66c5c'
-        - '#f0804e'
-        - '#f89540'
-        - '#fdac33'
-        - '#fdc527'
-        - '#f8df25'     
-  - id: nasa-sedac-population-2015
-    stacCol: nasa-sedac-population-density
-    name: Population Density - 2015
-    type: raster
-    description: Gridded population of the world for the year 2015
-    zoomExtent:
-      - 0
-      - 20
-    sourceParams:
-      assets: 2015
-      colormap_name: plasma
-      rescale:
-        - 0
-        - 1000
-      nodata: 0
-    compare:
-      datasetId: nasa-sedac-gridded-population-density-yearly
-      layerId: nasa-sedac-population-2015
-      mapLabel: |
-        ::js ({ dateFns, datetime, compareDatetime }) => {
-          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
-        }           
-    legend:
-      unit:
-        label: persons per sq km
-      type: gradient
-      min: 0
-      max: 1000
-      stops:
-        - '#310597'
-        - '#4c02a1'
-        - '#6600a7'
-        - '#7e03a8'
-        - '#9511a1'
-        - '#aa2395'
-        - '#bc3587'
-        - '#cc4778'
-        - '#da5a6a'
-        - '#e66c5c'
-        - '#f0804e'
-        - '#f89540'
-        - '#fdac33'
-        - '#fdc527'
-        - '#f8df25'     
-  - id: nasa-sedac-population-2020
-    stacCol: nasa-sedac-population-density
-    name: Population Density - 2020
-    type: raster
-    description: Gridded population of the world for the year 2020
-    zoomExtent:
-      - 0
-      - 20
-    sourceParams:
-      assets: 2020
-      colormap_name: plasma
-      rescale:
-        - 0
-        - 1000
-      nodata: 0
-    compare:
-      datasetId: nasa-sedac-gridded-population-density-yearly
-      layerId: nasa-sedac-population-2020
-      mapLabel: |
-        ::js ({ dateFns, datetime, compareDatetime }) => {
-          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
-        }
-    legend:
-      unit:
-        label: persons per sq km
-      type: gradient
-      min: 0
-      max: 1000
-      stops:
-        - '#310597'
-        - '#4c02a1'
-        - '#6600a7'
-        - '#7e03a8'
-        - '#9511a1'
-        - '#aa2395'
-        - '#bc3587'
-        - '#cc4778'
-        - '#da5a6a'
-        - '#e66c5c'
-        - '#f0804e'
-        - '#f89540'
-        - '#fdac33'
-        - '#fdc527'
-        - '#f8df25'                      
+        - '#f8df25'    
 ---
 
 <Block>
