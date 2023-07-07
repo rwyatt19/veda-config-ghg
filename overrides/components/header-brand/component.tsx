@@ -39,7 +39,7 @@ export default function HeaderComponent() {
     <Brand>
       <Link to="/">
         <img src={ghgLogo} />
-        <span>GHG Monitoring and Information Center</span>
+        <span>U.S. Green House Gas Center</span>
       </Link>
     </Brand>
   );
