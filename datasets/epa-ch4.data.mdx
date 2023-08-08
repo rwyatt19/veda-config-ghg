@@ -1,12 +1,12 @@
 ---
 id: epa-emissions-annual-tests
-name: Methane Emissions
-description: Gridded inventory of US anthropogenic methane emissions with 0.1° × 0.1° spatial resolution at annual, monthly and daily scale.
+name: EPA 2012 Gridded Methane Emissions
+description: Annual, monthly, and daily 0.1 degree resolution estimates of anthropogenic methane emissions for the U.S. region for 2012
 usage:
-  - url: 'https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/ODIAC_fossil_fuel_geotiff_transformation.py'
+  - url: 'https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/epa_methane_nc_transformation.py'
     label: Notebook to trasnform GeoTIFF to COG
     title: 'EPA methane emissions data transformation notebook'
-  - url: 'https://github.com/NASA-IMPACT/GHGC_docs/blob/main/user_data_notebooks/ODIAC_CO2_data_notebook.ipynb'
+  - url: 'https://github.com/NASA-IMPACT/GHGC_docs/blob/main/user_data_notebooks/epa_ch4_data_notebook.ipynb'
     label: Notebook to read, visualize, and explore data statistics
     title: 'EPA methane emissions data notebook'
 media:
@@ -14,8 +14,20 @@ media:
   alt: emission from industry
   author:
     name: Patrick Hendry
-sources:
-  - epa-ghg
+taxonomy:
+  - name: Topics
+    values:
+      - Anthropogenic Emissions
+  - name: Source
+    values:
+      - EPA
+  - name: Gas
+    values:
+      - CH₄
+  - name: Product Type
+    values:
+      - Satellite Measured
+      - Ground Measurements      
 layers:
   - id: 4f-field-burning-a
     stacCol: epa-gridded-annual-emissions
@@ -466,8 +478,8 @@ layers:
     All data provided in the U.S. GHG Center has been transformed from the original format into Cloud Optimized GeoTIFF (COG). Careful quality checks are used to ensure data transformation has been performed correctly.  
     
     ## Data Stewardship
-    - [Data Management Report]
-    - [Data Transformation Process](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/NASA_GSFC_wetlands_transformation.py)
+    - [Data Workflow]
+    - [Data Transformation Code](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/cog_transformation_scripts/NASA_GSFC_wetlands_transformation.py)
     - [U.S. GHG Center Data Intake Processing and Verification Report](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/processing_and_confirmation_reports/ODIAC_Processing%20and%20Confirmation%20Report%20.pdf)
     - [Notes]
 
