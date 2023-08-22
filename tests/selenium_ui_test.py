@@ -41,10 +41,20 @@ def password_input():
 def save_page(filename):
     output_dir = os.environ["OUTPUT_DIR"]
     os.makedirs(output_dir, exist_ok=True)
-    file_path = os.path.join(output_dir, filename)
+
+    html_path = os.path.join(output_dir, f"{filename}.html")
     html_source = driver.page_source
-    with open(file_path, "w", encoding="utf-8") as file:
+    with open(html_path, "w", encoding="utf-8") as file:
         file.write(html_source)
+
+    screenshot_path = os.path.join(output_dir,f"{filename}_screenshot.png")
+    original_size = driver.get_window_size()
+    height = driver.execute_script("return document.body.parentNode.scrollHeight")
+    driver.set_window_size(original_size['width'], height)
+    url = driver.current_url
+    driver.get(url)
+    time.sleep(3)
+    driver.save_screenshot(screenshot_path)
 
 def logo_validation(dashboard_base_url):
     driver.get(dashboard_base_url)
@@ -58,7 +68,7 @@ def logo_validation(dashboard_base_url):
         if not image_elements:
             missing_logos.append(src)
             encountered_errors.append(f"Missing logo: {src}")
-            save_page("missing-logos.html")
+            save_page("missing-logos")
         else:
             for image_element in image_elements:
                 image_element_y = image_element.location['y']
@@ -68,7 +78,7 @@ def logo_validation(dashboard_base_url):
     mad = statistics.mean(absolute_deviations)
     if mad > 13:
         encountered_errors.append("Logos are out of alignment.")
-        save_page("misaligned-logos.html")
+        save_page("misaligned-logos")
 
 def catalog_verification(dashboard_base_url):
     driver.get(f"{dashboard_base_url}/data-catalog")
@@ -82,7 +92,7 @@ def catalog_verification(dashboard_base_url):
         except NoSuchElementException:
             missing_catalogs.append(catalog)
             encountered_errors.append(f"Missing catalog: {catalog}")
-            save_page("missing-catalogs.html")
+            save_page("missing-catalogs")
 
 def dataset_verification(dashboard_base_url):
     driver.get(f"{dashboard_base_url}/analysis")
@@ -111,14 +121,14 @@ def dataset_verification(dashboard_base_url):
         checkable_form.click()
     except NoSuchElementException:
         encountered_errors.append("Datasets are not appearing on analysis page")
-        save_page("missing-datasets.html")
+        save_page("missing-datasets")
     time.sleep(3)
     driver.find_element(By.XPATH, '//button[contains(@class, "Button__StyledButton")]').click
     time.sleep(3)
     try:
         driver.find_element(By.XPATH, '//p[contains(text(), "failed")]')
         encountered_errors.append("Map datasets are not being generated properly")
-        save_page("missing-map-datasets.html")
+        save_page("missing-map-datasets")
     except NoSuchElementException:
         pass
 
