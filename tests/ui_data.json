@@ -3,8 +3,7 @@
       "epa",
       "nasa",
       "nist",
-      "noaa",
-      "fake"
+      "noaa"
     ],
     "catalogs": [
       "CASA GFED Land-Atmosphere CO₂ Flux",
