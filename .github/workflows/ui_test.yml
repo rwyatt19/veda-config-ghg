@@ -16,12 +16,15 @@ jobs:
       - name: Use Node.js
         env:
           NODE: 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE }}
+          cache: 'yarn'
 
       - name: Install
-        run: ./.veda/setup
+        run: |
+          ./.veda/setup
+          pip install selenium
 
       - name: Host and Test Locally
         env:
