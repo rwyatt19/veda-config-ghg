@@ -1,0 +1,14 @@
+{
+    "logos": [
+      "epa",
+      "nasa",
+      "nist",
+      "noaa",
+      "fake"
+    ],
+    "catalogs": [
+      "Methane Emissions",
+      "Fake"
+    ]
+  }
+  

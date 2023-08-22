@@ -1,0 +1,46 @@
+name: Selenium UI Testing 🧑‍💻️
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          
+      - name: Use Node.js ${{ env.NODE }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODE }}
+
+      - name: Install
+        run: ./.veda/setup
+
+      - name: Host and Test Locally
+        env:
+          MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+          GOOGLE_TAG_MANAGER_ID: ${{ secrets.GOOGLE_TAG_MANAGER_ID }}
+          GOOGLE_TAG_AUTH: ${{ secrets.GOOGLE_TAG_AUTH }}
+          GOOGLE_TAG_PREVIEW: ${{ secrets.GOOGLE_TAG_PREVIEW }}
+          DASHBOARD_BASE_URL: http://localhost:3000
+          OUTPUT_DIR: ${{ github.workspace }}/output
+        run: |
+          yarn build
+          cd dist
+          python -m http.server 3000 &> log.txt &
+          sleep 10
+          python selenium_ui_test.py
+          pkill -f "python -m http.server 3000"
+
+      - name: Upload HTML artifacts
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: html-error-pages
+          path: ${{ github.workspace }}/output
+    
