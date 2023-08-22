@@ -113,9 +113,7 @@ def dataset_verification(dashboard_base_url):
         encountered_errors.append("Datasets are not appearing on analysis page")
         save_page("missing-datasets.html")
     time.sleep(3)
-    generate_button = driver.find_element(By.XPATH, '//a[contains(@class, "Button__StyledButton")]')
-    driver.execute_script("arguments[0].scrollIntoView();", generate_button)
-    generate_button.click()
+    driver.find_element(By.XPATH, '//button[contains(@class, "Button__StyledButton")]').click
     time.sleep(3)
     try:
         driver.find_element(By.XPATH, '//p[contains(text(), "failed")]')
