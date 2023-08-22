@@ -53,7 +53,7 @@ jobs:
           yarn build
           nohup yarn serve > serve.log 2>&1 &
           sleep 10
-          cd ../tests
+          cd tests
           python selenium_ui_test.py
         
       - name: Stop yarn serve
