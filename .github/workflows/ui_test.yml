@@ -63,6 +63,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          name: html-error-pages
+          name: errors
           path: ${{ github.workspace }}/output
     
