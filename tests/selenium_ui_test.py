@@ -86,7 +86,6 @@ def catalog_verification(dashboard_base_url):
 
 def dataset_verification(dashboard_base_url):
     driver.get(f"{dashboard_base_url}/analysis")
-    save_page("missing-map.html")
     if ui_password:
         password_input()
     map_canvas = driver.find_element(By.XPATH, '//canvas[@class="mapboxgl-canvas"]')

@@ -47,17 +47,16 @@ jobs:
           GOOGLE_TAG_MANAGER_ID: ${{ secrets.GOOGLE_TAG_MANAGER_ID }}
           GOOGLE_TAG_AUTH: ${{ secrets.GOOGLE_TAG_AUTH }}
           GOOGLE_TAG_PREVIEW: ${{ secrets.GOOGLE_TAG_PREVIEW }}
-          DASHBOARD_BASE_URL: http://localhost:3000
+          DASHBOARD_BASE_URL: http://localhost:9000
           OUTPUT_DIR: ${{ github.workspace }}/output
         run: |
           yarn build
           nohup yarn serve > serve.log 2>&1 &
           sleep 10
-          cd tests
+          cd ../tests
           python selenium_ui_test.py
-          pkill -f "python -m http.server 3000"
-
-      - name: Kill yarn serve
+        
+      - name: Stop yarn serve
         run: pkill -f "yarn serve"
 
       - name: Upload HTML artifacts
