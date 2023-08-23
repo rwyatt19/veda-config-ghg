@@ -182,5 +182,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          name: errors
+          name: Encountered errors
           path: ${{ github.workspace }}/output
