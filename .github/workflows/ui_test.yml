@@ -65,7 +65,7 @@ jobs:
           name: errors
           path: ${{ github.workspace }}/output
 
-            serve_and_test_chrome:
+  serve_and_test_firefox:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -161,7 +161,7 @@ jobs:
           ./.veda/setup
           pip install selenium==4.11.2
       
-      - name: Serve and Test Chrome
+      - name: Serve and Test Firefox
         env:
           MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
           GOOGLE_TAG_MANAGER_ID: ${{ secrets.GOOGLE_TAG_MANAGER_ID }}
