@@ -40,39 +40,6 @@ jobs:
         run: |
           ./.veda/setup
       
-      # - name: Build
-      #   env:
-      #     MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
-      #     GOOGLE_TAG_MANAGER_ID: ${{ secrets.GOOGLE_TAG_MANAGER_ID }}
-      #     GOOGLE_TAG_AUTH: ${{ secrets.GOOGLE_TAG_AUTH }}
-      #     GOOGLE_TAG_PREVIEW: ${{ secrets.GOOGLE_TAG_PREVIEW }}
-      #   run: yarn build
-  
-  serve_and-test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive
-
-      - name: Restore node_modules
-        uses: actions/cache@v2
-        id: cache-node-modules
-        with:
-          path: |
-            node_modules
-            .veda/ui/node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
-
-      - name: Restore dist cache
-        uses: actions/cache@v2
-        id: cache-dist
-        with:
-          path: dist
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ github.workflow }}-${{ github.sha }}
-      
       - name: Install selenium
         run: pip install selenium
       
