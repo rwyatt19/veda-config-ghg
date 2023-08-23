@@ -42,12 +42,12 @@ def save_page(filename):
     output_dir = os.environ["OUTPUT_DIR"]
     os.makedirs(output_dir, exist_ok=True)
 
-    html_path = os.path.join(output_dir, f"{filename}_firefox.html")
+    html_path = os.path.join(output_dir, f"{filename}_edge.html")
     html_source = driver.page_source
     with open(html_path, "w", encoding="utf-8") as file:
         file.write(html_source)
 
-    screenshot_path = os.path.join(output_dir,f"{filename}firefox_screenshot.png")
+    screenshot_path = os.path.join(output_dir,f"{filename}edge_screenshot.png")
     original_size = driver.get_window_size()
     height = driver.execute_script("return document.body.parentNode.scrollHeight")
     driver.set_window_size(original_size['width'], height)
