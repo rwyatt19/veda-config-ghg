@@ -47,7 +47,7 @@ def save_page(filename):
     with open(html_path, "w", encoding="utf-8") as file:
         file.write(html_source)
 
-    screenshot_path = os.path.join(output_dir,f"{filename}chrome_screenshot.png")
+    screenshot_path = os.path.join(output_dir,f"{filename}_chrome_screenshot.png")
     original_size = driver.get_window_size()
     height = driver.execute_script("return document.body.parentNode.scrollHeight")
     driver.set_window_size(original_size['width'], height)
