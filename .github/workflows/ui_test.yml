@@ -62,7 +62,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          name: Encountered errors
+          name: Chrome errors
           path: ${{ github.workspace }}/output
 
   serve_and_test_firefox:
@@ -122,7 +122,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          name: Encountered errors
+          name: Firefox errors
           path: ${{ github.workspace }}/output
 
   serve_and_test_edge:
@@ -182,5 +182,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v2
         with:
-          name: Encountered errors
+          name: Edge errors
           path: ${{ github.workspace }}/output
