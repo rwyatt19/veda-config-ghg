@@ -73,22 +73,15 @@ jobs:
           path: dist
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ github.workflow }}-${{ github.sha }}
       
-      - name: Serve
-        run: nohup yarn serve > serve.log 2>&1 &
-
       - name: Install selenium
         run: pip install selenium
-
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          submodules: recursive
-
-      - name: Run UI Tests
+      
+      - name: Serve and Test
         env:
           DASHBOARD_BASE_URL: http://localhost:9000
           OUTPUT_DIR: ${{ github.workspace }}/output
         run: |
+          nohup yarn serve > serve.log 2>&1 &
           cd tests
           python selenium_ui_test.py
         
