@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  serve_and_test_chrome:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,11 +39,9 @@ jobs:
       - name: Install
         run: |
           ./.veda/setup
+          pip install selenium==4.11.X
       
-      - name: Install selenium
-        run: pip install selenium
-      
-      - name: Serve and Test
+      - name: Serve and Test Chrome
         env:
           MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
           GOOGLE_TAG_MANAGER_ID: ${{ secrets.GOOGLE_TAG_MANAGER_ID }}
@@ -52,7 +50,6 @@ jobs:
           DASHBOARD_BASE_URL: http://localhost:9000
           OUTPUT_DIR: ${{ github.workspace }}/output
         run: |
-          yarn build
           nohup yarn serve > serve.log 2>&1 &
           sleep 10
           cd tests
@@ -61,7 +58,7 @@ jobs:
       - name: Kill yarn serve
         run: pkill -f "yarn serve"
 
-      - name: Upload HTML artifacts
+      - name: Upload artifacts
         if: always()
         uses: actions/upload-artifact@v2
         with:
