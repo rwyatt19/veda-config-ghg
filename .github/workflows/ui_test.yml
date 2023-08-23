@@ -82,6 +82,7 @@ jobs:
           OUTPUT_DIR: ${{ github.workspace }}/output
         run: |
           nohup yarn serve > serve.log 2>&1 &
+          sleep 10
           cd tests
           python selenium_ui_test.py
         
