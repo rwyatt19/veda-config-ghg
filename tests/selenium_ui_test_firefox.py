@@ -11,7 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 firefox_options = FirefoxOptions()
-firefox_options.headless = True  # Use headless mode
+firefox_options.add_argument('--headless')
 driver = webdriver.Firefox(options=firefox_options)
 driver.set_window_size(1920, 1080)
 driver.implicitly_wait(3)
