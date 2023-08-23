@@ -4,7 +4,7 @@ import statistics
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from msedge.selenium_tools import Edge, EdgeOptions
+from selenium.webdriver.edge.options import Options as EdgeOptions
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
@@ -12,7 +12,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 edge_options = EdgeOptions()
 edge_options.add_argument('--headless')
-driver = Edge(options=edge_options)
+driver = webdriver.Edge(options=edge_options)
 driver.set_window_size(1920, 1080)
 driver.implicitly_wait(3)
 
