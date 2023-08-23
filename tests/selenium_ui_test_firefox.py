@@ -95,46 +95,43 @@ def catalog_verification(dashboard_base_url):
             save_page("missing-catalogs")
 
 def dataset_verification(dashboard_base_url):
+    driver.get(f"{dashboard_base_url}/analysis")
+    if ui_password:
+        password_input()
+    map_canvas = driver.find_element(By.XPATH, '//canvas[@class="mapboxgl-canvas"]')
+    corner_coordinates = [
+        (-20, 20),
+        (60, 20),
+        (60, 60),
+        (-20, 60)
+    ]
+    time.sleep(3)
+    actions = ActionChains(driver)
+    for x, y in corner_coordinates:
+        actions.move_to_element_with_offset(map_canvas, x, y).click().perform()
+    map_canvas.send_keys(Keys.ENTER)
+    time.sleep(3)
+    action_button = driver.find_element(By.XPATH, '//span[contains(text(), "Actions")]/following::button[contains(@class, "StyledButton")]')
+    driver.execute_script("arguments[0].click();", action_button)
+    driver.find_element(By.XPATH, '//li//button[contains(text(), "Last 10 years")]').click()
     try:
-        driver.get(f"{dashboard_base_url}/analysis")
-        if ui_password:
-            password_input()
-        map_canvas = driver.find_element(By.XPATH, '//canvas[@class="mapboxgl-canvas"]')
-        corner_coordinates = [
-            (-20, 20),
-            (60, 20),
-            (60, 60),
-            (-20, 60)
-        ]
         time.sleep(3)
-        actions = ActionChains(driver)
-        for x, y in corner_coordinates:
-            actions.move_to_element_with_offset(map_canvas, x, y).click().perform()
-        map_canvas.send_keys(Keys.ENTER)
-        time.sleep(3)
-        action_button = driver.find_element(By.XPATH, '//span[contains(text(), "Actions")]/following::button[contains(@class, "StyledButton")]')
-        driver.execute_script("arguments[0].click();", action_button)
-        driver.find_element(By.XPATH, '//li//button[contains(text(), "Last 10 years")]').click()
-        try:
-            time.sleep(3)
-            checkable_form = driver.find_element(By.XPATH, '//*[contains(@class, "checkable__FormCheckableText")]')
-            driver.execute_script("arguments[0].scrollIntoView();", checkable_form)
-            checkable_form.click()
-        except NoSuchElementException:
-            encountered_errors.append("Datasets are not appearing on analysis page")
-            save_page("missing-datasets")
-        time.sleep(3)
-        driver.find_element(By.XPATH, '//button[contains(@class, "Button__StyledButton")]').click
-        time.sleep(3)
-        try:
-            driver.find_element(By.XPATH, '//p[contains(text(), "failed")]')
-            encountered_errors.append("Map datasets are not being generated properly")
-            save_page("missing-map-datasets")
-        except NoSuchElementException:
-            pass
+        checkable_form = driver.find_element(By.XPATH, '//*[contains(@class, "checkable__FormCheckableText")]')
+        driver.execute_script("arguments[0].scrollIntoView();", checkable_form)
+        checkable_form.click()
     except NoSuchElementException:
-        save_page("missing-elements")
-        
+        encountered_errors.append("Datasets are not appearing on analysis page")
+        save_page("missing-datasets")
+    time.sleep(3)
+    driver.find_element(By.XPATH, '//button[contains(@class, "Button__StyledButton")]').click
+    time.sleep(3)
+    try:
+        driver.find_element(By.XPATH, '//p[contains(text(), "failed")]')
+        encountered_errors.append("Map datasets are not being generated properly")
+        save_page("missing-map-datasets")
+    except NoSuchElementException:
+        pass
+
 # Retry loop
 max_retries = 3
 dashboard_base_url = os.getenv("DASHBOARD_BASE_URL").rstrip('/')
