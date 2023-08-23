@@ -98,6 +98,7 @@ def dataset_verification(dashboard_base_url):
     driver.get(f"{dashboard_base_url}/analysis")
     if ui_password:
         password_input()
+    save_page("firefox_testing")
     map_canvas = driver.find_element(By.XPATH, '//canvas[@class="mapboxgl-canvas"]')
     corner_coordinates = [
         (-20, 20),
