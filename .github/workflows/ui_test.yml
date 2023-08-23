@@ -39,7 +39,7 @@ jobs:
       - name: Install
         run: |
           ./.veda/setup
-          pip install selenium==4.11.X
+          pip install selenium==4.11.2
       
       - name: Serve and Test Chrome
         env:
