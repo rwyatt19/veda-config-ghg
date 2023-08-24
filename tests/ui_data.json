@@ -3,8 +3,7 @@
       "epa",
       "nasa",
       "nist",
-      "noaa",
-      "fake logo"
+      "noaa"
     ],
     "catalogs": [
       "CASA GFED Land-Atmosphere CO₂ Flux",
@@ -14,8 +13,7 @@
       "Gridded Methane Emissions v2",
       "ODIAC Fossil Fuel CO₂ Emissions",
       "SEDAC Gridded World Population Data",
-      "Wetland Methane Emissions, LPJ-wsl Model",
-      "fake catalog"
+      "Wetland Methane Emissions, LPJ-wsl Model"
     ]
   }
   
