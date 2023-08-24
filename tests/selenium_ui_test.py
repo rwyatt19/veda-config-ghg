@@ -138,6 +138,7 @@ def dataset_verification(dashboard_base_url):
             EC.invisibility_of_element_located((By.XPATH, '//p[contains(text(), "loading") or contains(text(), "loaded")]'))
 )
     except TimeoutException:
+        save_page("missing-map-datasets")
         encountered_errors.append("Map datasets are not being generated properly")
 
 # Retry loop
