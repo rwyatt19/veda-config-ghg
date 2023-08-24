@@ -6,8 +6,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 options = Options()
 # options.add_experimental_option("detach", True)
@@ -29,6 +31,9 @@ class PageValidationException(Exception):
         if self.custom_message:
             message += self.custom_message + "\n"
         return message
+
+def wait_for_clickable(element):
+    return WebDriverWait(driver, 10).until(EC.element_to_be_clickable(element))
 
 def password_input():
     try:
@@ -105,7 +110,8 @@ def dataset_verification(dashboard_base_url):
         (60, 60),
         (-20, 60)
     ]
-    time.sleep(3)
+    # time.sleep(3)
+    wait_for_clickable(map_canvas)
     actions = ActionChains(driver)
     for x, y in corner_coordinates:
         actions.move_to_element_with_offset(map_canvas, x, y).click().perform()
@@ -115,22 +121,26 @@ def dataset_verification(dashboard_base_url):
     driver.execute_script("arguments[0].click();", action_button)
     driver.find_element(By.XPATH, '//li//button[contains(text(), "Last 10 years")]').click()
     try:
-        time.sleep(3)
+        # time.sleep(3)
         checkable_form = driver.find_element(By.XPATH, '//*[contains(@class, "checkable__FormCheckableText")]')
+        wait_for_clickable(checkable_form)
         driver.execute_script("arguments[0].scrollIntoView();", checkable_form)
         checkable_form.click()
     except NoSuchElementException:
         encountered_errors.append("Datasets are not appearing on analysis page")
         save_page("missing-datasets")
-    time.sleep(3)
-    driver.find_element(By.XPATH, '//button[contains(@class, "Button__StyledButton")]').click
-    time.sleep(3)
+    # time.sleep(3)
+    generate_button = driver.find_element(By.XPATH, '//button[contains(@class, "Button__StyledButton")]')
+    driver.execute_script("arguments[0].scrollIntoView();", generate_button)
+    wait_for_clickable(generate_button)
+    generate_button.click()
+    # time.sleep(3)
     try:
-        driver.find_element(By.XPATH, '//p[contains(text(), "failed")]')
+        WebDriverWait(driver, 30).until(
+            EC.invisibility_of_element_located((By.XPATH, '//p[contains(text(), "loading") or contains(text(), "loaded")]'))
+)
+    except TimeoutException:
         encountered_errors.append("Map datasets are not being generated properly")
-        save_page("missing-map-datasets")
-    except NoSuchElementException:
-        pass
 
 # Retry loop
 max_retries = 3
@@ -147,7 +157,7 @@ for retry in range(max_retries):
             error_message = "\n".join(encountered_errors)
             raise PageValidationException(custom_message=error_message)
         else:
-            print("Validation successful! All elements found.")
+            print("Validation successful!!! All elements found.")
             break
     except PageValidationException as e:
         if retry < max_retries - 1:
