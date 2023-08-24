@@ -110,8 +110,9 @@ def dataset_verification(dashboard_base_url):
         (60, 60),
         (-20, 60)
     ]
-    time.sleep(3)
+    # time.sleep(3)
     actions = ActionChains(driver)
+    wait_for_clickable(map_canvas)
     for x, y in corner_coordinates:
         actions.move_to_element_with_offset(map_canvas, x, y).click().perform()
     map_canvas.send_keys(Keys.ENTER)
@@ -120,16 +121,18 @@ def dataset_verification(dashboard_base_url):
     driver.execute_script("arguments[0].click();", action_button)
     driver.find_element(By.XPATH, '//li//button[contains(text(), "Last 10 years")]').click()
     try:
-        time.sleep(3)
+        # time.sleep(3)
         checkable_form = driver.find_element(By.XPATH, '//*[contains(@class, "checkable__FormCheckableText")]')
         driver.execute_script("arguments[0].scrollIntoView();", checkable_form)
+        wait_for_clickable(checkable_form)
         checkable_form.click()
     except NoSuchElementException:
         encountered_errors.append("Datasets are not appearing on analysis page")
         save_page("missing-datasets")
-    time.sleep(3)
-    driver.find_element(By.XPATH, '//button[contains(@class, "Button__StyledButton")]')
-    time.sleep(3)
+    # time.sleep(3)
+    generate_button = driver.find_element(By.XPATH, '//a[contains(@class, "Button__StyledButton") and contains(text(), "Generate")]')
+    wait_for_clickable(generate_button)
+    generate_button.click()
     try:
         WebDriverWait(driver, 30).until(
             EC.invisibility_of_element_located((By.XPATH, '//p[contains(text(), "loading") or contains(text(), "loaded")]'))
