@@ -121,7 +121,7 @@ def dataset_verification(dashboard_base_url):
     driver.execute_script("arguments[0].click();", action_button)
     driver.find_element(By.XPATH, '//li//button[contains(text(), "Last 10 years")]').click()
     try:
-        time.sleep(3)
+        # time.sleep(3)
         checkable_form = driver.find_element(By.XPATH, '//*[contains(@class, "checkable__FormCheckableText")]')
         wait_for_clickable(checkable_form)
         driver.execute_script("arguments[0].scrollIntoView();", checkable_form)
@@ -131,6 +131,7 @@ def dataset_verification(dashboard_base_url):
         save_page("missing-datasets")
     # time.sleep(3)
     generate_button = driver.find_element(By.XPATH, '//button[contains(@class, "Button__StyledButton")]')
+    driver.execute_script("arguments[0].scrollIntoView();", generate_button)
     wait_for_clickable(generate_button)
     generate_button.click()
     # time.sleep(3)
