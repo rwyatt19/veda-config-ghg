@@ -1,15 +1,15 @@
 ---
-id: nasa-ceos-co2-flux-annual
+id: ceos-co2budget-yeargrid-v1-ghgc
 name: CEOS National Top-Down CO₂ Budgets
 description: Global, 1 degree resolution pilot top-down budgets of carbon dioxide emissions at 5 year intervals and national scales, version 1
 usage:
-  - url: 'https://github.com/US-GHG-Center/ghgc-docs/blob/main/cog_transformation_scripts/nasa_ceos_co2_flux_data_transformation.py'
+  - url: 'https://github.com/US-GHG-Center/ghgc-docs/blob/main/cog_transformation_scripts/ceos-co2budget-yeargrid-v1_Transformation_Code.py'
     label: Notebook to transform GeoTIFF to COG
     title: 'CO₂ Flux data transformation notebook'
-  - url: 'https://github.com/US-GHG-Center/ghgc-docs/blob/main/user_data_notebooks/nasa_ceos_co2_flux.ipynb'
+  - url: 'https://github.com/US-GHG-Center/ghgc-docs/blob/main/user_data_notebooks/ceos-co2budget-yeargrid-v1_User_Notebook.ipynb'
     label: Notebook to read, visualize, and explore data statistics
     title: 'CO₂ Flux data notebook'
-  - url: 'user_data_notebooks/ceos-co2budget-yeargrid-v1_User_Notebook.ipynb'
+  - url: 'https://hub.ghg.center/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUS-GHG-Center%2Fghgc-docs&urlpath=tree%2Fghgc-docs%2Fuser_data_notebooks%2Fceos-co2budget-yeargrid-v1_User_Notebook.ipynb&branch=main'
     label: Run example notebook
     title: Interactive session in the U.S. GHG Center 2i2c JupyterHub (requires account)
 media:
@@ -49,7 +49,7 @@ layers:
         - 240
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-river
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -85,7 +85,7 @@ layers:
         - 140
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-river-std
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -121,7 +121,7 @@ layers:
         - 450
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-ff
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -157,7 +157,7 @@ layers:
         - 25000
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-ff-std
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -193,7 +193,7 @@ layers:
         - 2500
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-lnlgis-nbe
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -229,7 +229,7 @@ layers:
         - 25000
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-lnlgis-nbe-std
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -265,7 +265,7 @@ layers:
         - 25300
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-lnlgis-nce
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -301,7 +301,7 @@ layers:
         - 1400
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-lnlgis-nce-std
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -337,7 +337,7 @@ layers:
         - 25700
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-lnlgis-dc-loss
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -373,7 +373,7 @@ layers:
         - 25000
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-lnlgis-dc-loss-std
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -409,7 +409,7 @@ layers:
         - 1500
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-crop
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -445,7 +445,7 @@ layers:
         - 450
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-crop-std
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -481,7 +481,7 @@ layers:
         - 900
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-wood
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -525,7 +525,7 @@ layers:
         - 600
       nodata: 0
     compare:
-      datasetId: nasa-ceos-co2-flux-annual
+      datasetId: ceos-co2budget-yeargrid-v1-ghgc
       layerId: co2-emissions-wood-std
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
@@ -578,10 +578,9 @@ layers:
     [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode) (CC BY 4.0) 
           
     ## Data Stewardship
-    - [Data Workflow]
-    - [Data Transformation Code](https://github.com/US-GHG-Center/ghgc-docs/blob/main/cog_transformation_scripts/nasa_ceos_co2_flux_data_transformation.py)
-    - [U.S. GHG Center Data Intake Processing and Verification Report](https://github.com/NASA-IMPACT/GHGC_docs/blob/main/processing_and_confirmation_reports/ODIAC_Processing%20and%20Confirmation%20Report%20.pdf)
-    - [Notes]
+    - [Data Workflow](https://github.com/US-GHG-Center/ghgc-docs/blob/main/data_workflow/(https://github.com/US-GHG-Center/ghgc-docs/blob/main/data_workflow/lpjwsl-wetlandch4-grid-v1_Data_Flow.png))
+    - [Data Transformation Code](https://github.com/US-GHG-Center/ghgc-docs/blob/main/cog_transformation_scripts/ceos-co2budget-yeargrid-v1_Transformation_Code.py)
+    - [U.S. GHG Center Data Intake Processing and Verification Report](https://github.com/US-GHG-Center/ghgc-docs/blob/main/processing_and_verification_reports/ceos-co2budget-yeargrid-v1_Processing%20and%20Verification%20Report.pdf)
 
   </Prose>
 </Block>

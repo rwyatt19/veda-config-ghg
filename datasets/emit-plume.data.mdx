@@ -1,5 +1,5 @@
 ---
-id: jpl-ch4-plume-emissions
+id: emit-ch4plume-v1-ghgc
 name: EMIT Methane Emission Plumes
 description: Daily aggregated, global point source methane emission plume estimates from the EMIT instrument on the International Space Station (ISS)
 usage:
@@ -49,7 +49,7 @@ layers:
         - 1500
       nodata: -9999
     compare:
-      datasetId: jpl-ch4-plume-emissions
+      datasetId: emit-ch4plume-v1-ghgc
       layerId: ch4-plume-emissions
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
