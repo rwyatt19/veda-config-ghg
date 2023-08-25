@@ -120,23 +120,14 @@ def dataset_verification(dashboard_base_url):
     action_button = driver.find_element(By.XPATH, '//span[contains(text(), "Actions")]/following::button[contains(@class, "StyledButton")]')
     driver.execute_script("arguments[0].click();", action_button)
     driver.find_element(By.XPATH, '//li//button[contains(text(), "Last 10 years")]').click()
-    while True:  # This creates an infinite loop that will keep trying until the condition is met
-        try:
-            data_set = driver.find_element(By.XPATH, '//*[contains(@class, "checkable__FormCheckableText")]')
-            wait_for_clickable(data_set)
-            driver.execute_script("arguments[0].scrollIntoView();", data_set)
-            data_set.click()
-
-            clicked_button = None
-            try:
-                clicked_button = driver.find_element(By.XPATH, '//a[contains(@variation, "achromic-outline")]')
-            except NoSuchElementException:
-                pass
-
-            if clicked_button:
-                break  # Exit the loop if the condition is met
-        except NoSuchElementException:
-            encountered_errors.append("Datasets are not appearing on the analysis page")
+    try:
+        # time.sleep(3)
+        checkable_form = driver.find_element(By.XPATH, '//*[contains(@class, "checkable__FormCheckableText")]')
+        driver.execute_script("arguments[0].scrollIntoView();", checkable_form)
+        wait_for_clickable(checkable_form)
+        checkable_form.click()
+    except NoSuchElementException:
+        encountered_errors.append("Datasets are not appearing on analysis page")
         save_page("missing-datasets")
     # time.sleep(3)
     generate_button = driver.find_element(By.XPATH, '//a[contains(@class, "Button__StyledButton") and contains(text(), "Generate")]')
@@ -151,7 +142,7 @@ def dataset_verification(dashboard_base_url):
         encountered_errors.append("Map datasets are not being generated properly")
 
 # Retry loop
-max_retries = 1
+max_retries = 3
 dashboard_base_url = os.getenv("DASHBOARD_BASE_URL").rstrip('/')
 ui_password = os.getenv("PASSWORD")
 
