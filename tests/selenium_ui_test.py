@@ -151,7 +151,7 @@ def dataset_verification(dashboard_base_url):
         encountered_errors.append("Map datasets are not being generated properly")
 
 # Retry loop
-max_retries = 3
+max_retries = 1
 dashboard_base_url = os.getenv("DASHBOARD_BASE_URL").rstrip('/')
 ui_password = os.getenv("PASSWORD")
 
