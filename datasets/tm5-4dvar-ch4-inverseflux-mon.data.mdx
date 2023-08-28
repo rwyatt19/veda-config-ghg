@@ -26,6 +26,7 @@ taxonomy:
   - name: Source
     values:
       - NASA
+      - NOAA      
   - name: Gas
     values:
       - CH₄
@@ -44,10 +45,10 @@ layers:
       - 20
     sourceParams:
       assets: total
-      colormap_name: coolwarm
+      colormap_name: purd
       rescale:
-        - 0
-        - 400
+        - 0.48
+        - 24
       nodata: 0
     compare:
       datasetId: tm54dvar-ch4flux-monthgrid-v1-ghgc
@@ -60,19 +61,19 @@ layers:
       unit:
         label: g CH₄/m²/year
       type: gradient
-      min: 0
-      max: 400
+      min: 0.48
+      max: 24
       stops:
-        - '#3B4CC0'
-        - '#5D7CE6'
-        - '#82A6FB'
-        - '#AAC7FD'
-        - '#CDD9EC'
-        - '#EAD4C8'
-        - '#F7B89C'
-        - '#F18D6F'
-        - '#D95847'
-        - '#B40426'                    
+        - '#F7F4F9'
+        - '#E9E3F0'
+        - '#D9C3DF'
+        - '#CDA0CD'
+        - '#D57ABA'
+        - '#E34A9F'
+        - '#DF2179'
+        - '#C10E51'
+        - '#92003F'
+        - '#67001F'                    
   - id: microbial-ch4
     stacCol: tm54dvar-ch4flux-monthgrid-v1
     name: Microbial CH₄ Emission
