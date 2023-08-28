@@ -31,6 +31,114 @@ taxonomy:
     values:
       - Ground Data     
 layers:
+  - id: total-agriculture
+    stacCol: epa-ch4emission-yeargrid-v2express
+    name: Total Agriculture (annual)
+    type: raster
+    description: Total annual methane emission fluxes from Agriculture sources (sum of inventory categories: 3A, 3B, 3C, 3F)
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: enteric-fermentation
+      colormap_name: rainbow
+      rescale:
+        - 0
+        - 4182634135552
+      nodata: 0
+    compare:
+      datasetId: epa-ch4emission-yeargrid-v2express-ghgc
+      layerId: enteric-fermentation
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }      
+    legend:
+      unit: 
+       label: Molecules CH₄/cm²/s
+      type: gradient
+      min: 0
+      max: 4182634135552
+      stops:
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"     
+  - id: total-methane
+    stacCol: epa-ch4emission-yeargrid-v2express
+    name: Total Methane (annual)
+    type: raster
+    description: Total annual methane emission fluxes from all Agriculture, Energy, Waste, and ‘Other’ sources included in this dataset.
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: enteric-fermentation
+      colormap_name: rainbow
+      rescale:
+        - 0
+        - 4182634135552
+      nodata: 0
+    compare:
+      datasetId: epa-ch4emission-yeargrid-v2express-ghgc
+      layerId: enteric-fermentation
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }      
+    legend:
+      unit: 
+       label: Molecules CH₄/cm²/s
+      type: gradient
+      min: 0
+      max: 4182634135552
+      stops:
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"    
   - id: enteric-fermentation
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Agriculture Enteric Fermentation (annual)
@@ -60,13 +168,31 @@ layers:
       min: 0
       max: 4182634135552
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"           
   - id: manure-management
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Agriculture Manure Management (annual)
@@ -96,13 +222,31 @@ layers:
       min: 0 
       max: 3062094888960
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"     
   - id: 4c-rice-cultivation
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Agriculture Rice Cultivation (annual)
@@ -132,13 +276,31 @@ layers:
       min: 0
       max: 6309977522176
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"     
   - id: 4f-field-burning
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Agriculture Field Burning (annual)
@@ -168,13 +330,85 @@ layers:
       min: 0
       max: 27056996352
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"     
+  - id: total-natural-gas
+    stacCol: epa-ch4emission-yeargrid-v2express
+    name:Total Natural Gas Systems (annual)
+    type: raster
+    description: Total annual methane emission fluxes from Natural Gas Systems (sum of inventory Energy 1B2b sub-categories)
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: exploration-ngs
+      colormap_name: rainbow
+      rescale:
+        - 0
+        - 2611559792640
+      nodata: 0
+    compare:
+      datasetId: epa-ch4emission-yeargrid-v2express-ghgc
+      layerId: 1B2b-exploration-ngs
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }      
+    legend:
+      unit: 
+       label: Molecules CH₄/cm²/s
+      type: gradient
+      min: 0
+      max: 2611559792640
+      stops:
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"     
   - id: 1B2b-exploration-ngs
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Natural Gas Exploration (annual)
@@ -204,13 +438,31 @@ layers:
       min: 0
       max: 2611559792640
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"  
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"     
   - id: 1B2b-production-ngs
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Natural Gas Production (annual)
@@ -240,13 +492,31 @@ layers:
       min: 0
       max: 13900969934848
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"        
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"          
   - id: 1B2b-transmission-storage-ngs
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Natural Gas Transmission and Storage (annual)
@@ -276,13 +546,31 @@ layers:
       min: 0
       max: 19360041140224
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"     
   - id: 1B2b-processing-ngs
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Natural Gas Processing (annual)
@@ -312,13 +600,31 @@ layers:
       min: 0
       max: 63448557813760
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"     
   - id: 1B2b-distribution-ngs
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Natural Gas Distribution (annual)
@@ -348,13 +654,31 @@ layers:
       min: 0
       max: 3239707148288
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"     
   - id: post-meter-ng
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Natural Gas Post-Meter (annual)
@@ -384,13 +708,85 @@ layers:
       min: 0
       max: 4006183357440
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"     
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"         
+  - id: total-petroleum
+    stacCol: epa-ch4emission-yeargrid-v2express
+    name: Total Petroleum Systems (annual)
+    type: raster
+    description: Total annual methane emission fluxes from Petroleum Systems (sum of inventory Energy 1B2a sub-categories)
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: exploration-ps
+      colormap_name: rainbow
+      rescale:
+        - 0
+        - 185182912512
+      nodata: 0
+    compare:
+      datasetId: epa-ch4emission-yeargrid-v2express-ghgc
+      layerId: 1B2a-exploration-ps
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }      
+    legend:
+      unit: 
+       label: Molecules CH₄/cm²/s
+      type: gradient
+      min: 0
+      max: 185182912512
+      stops:
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                
   - id: 1B2a-exploration-ps
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Petroleum Exploration (annual)
@@ -420,13 +816,31 @@ layers:
       min: 0
       max: 185182912512
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"             
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                
   - id: 1B2a-production-ps
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Petroleum Production (annual)
@@ -456,13 +870,31 @@ layers:
       min: 0
       max: 14142707597312
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"              
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                  
   - id: 1B2a-transport-ps
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Petroleum Transportation (annual)
@@ -492,13 +924,31 @@ layers:
       min: 0
       max: 321039630336
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"        
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"           
   - id: 1B2a-refining-ps
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Petroleum Refining (annual)
@@ -528,13 +978,85 @@ layers:
       min: 0
       max: 2642320293888
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"   
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"       
+  - id: total-waste
+    stacCol: epa-ch4emission-yeargrid-v2express
+    name: Total Waste (annual)
+    type: raster
+    description: Total annual methane emission fluxes from Waste (sum of inventory Waste categories: 5A1, 5B1, 5D)
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: msw-landfill-waste
+      colormap_name: rainbow
+      rescale:
+        - 0
+        - 45878274424832
+      nodata: 0
+    compare:
+      datasetId: epa-ch4emission-yeargrid-v2express-ghgc
+      layerId: 5A1-msw-landfill-waste
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }      
+    legend:
+      unit: 
+       label: Molecules CH₄/cm²/s
+      type: gradient
+      min: 0
+      max: 45878274424832
+      stops:
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"           
   - id: 5A1-msw-landfill-waste
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Waste Municipal Solid Waste (MSW) Landfills (annual)
@@ -564,13 +1086,31 @@ layers:
       min: 0
       max: 45878274424832
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"           
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"              
   - id: 5A1-industrial-landfill-waste
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Waste Industrial Landfills (annual)
@@ -600,13 +1140,31 @@ layers:
       min: 0
       max: 43219505119232
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"                
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                    
   - id: 5A1-dwtd-waste
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Waste Domestic Wastewater Treatment & Discharge (annual)
@@ -636,13 +1194,31 @@ layers:
       min: 0
       max: 13170276040704
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"            
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                
   - id: 5A1-iwtd-waste
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Waste Industrial Wastewater Treatment & Discharge (annual)
@@ -672,13 +1248,31 @@ layers:
       min: 0
       max: 62315768578048
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"            
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"              
   - id: 5A1-composting-waste
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Composting (annual)
@@ -708,13 +1302,85 @@ layers:
       min: 0
       max: 726430777344
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"            
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                
+- id: total-coal-mines
+    stacCol: epa-ch4emission-yeargrid-v2express
+    name: Total Coal Mines (annual)
+    type: raster
+    description: Total annual methane emission fluxes from Coal Mines (sum of inventory 1B1a sub-categories)
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: underground-coal
+      colormap_name: rainbow
+      rescale:
+        - 0
+        - 195221799305216
+      nodata: 0
+    compare:
+      datasetId: epa-ch4emission-yeargrid-v2express-ghgc
+      layerId: 1B1a-underground-coal
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }      
+    legend:
+      unit: 
+       label: Molecules CH₄/cm²/s
+      type: gradient
+      min: 0
+      max: 195221799305216
+      stops:
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                  
   - id: 1B1a-underground-coal
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Coal Mining Underground Mining (annual)
@@ -744,13 +1410,31 @@ layers:
       min: 0
       max: 195221799305216
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"            
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                
   - id: 1B1a-abn-underground-coal
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Coal Mining Abandoned Underground Mines (annual)
@@ -780,13 +1464,31 @@ layers:
       min: 0
       max: 11779458465792
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"            
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"             
   - id: 1B1a-surface-coal
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Coal Mining Surface Mining (annual)
@@ -816,13 +1518,85 @@ layers:
       min: 0
       max: 97066218946560
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"          
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"           
+  - id: total-other
+    stacCol: epa-ch4emission-yeargrid-v2express
+    name: Total Other (annual)
+    type: raster
+    description: Total annual methane emission fluxes from ‘other’ remaining sources (sum of inventory categories 1A (energy combustion), 2B8 & 2C2 (petrochemical & ferroalloy production) and 1B2a & 1B2b (abandoned O&G well emissions))
+    zoomExtent:
+      - 0
+      - 20
+    sourceParams:
+      assets: stationary-combustion-other
+      colormap_name: rainbow
+      rescale:
+        - 0
+        - 1096969945088
+      nodata: 0
+    compare:
+      datasetId: epa-ch4emission-yeargrid-v2express-ghgc
+      layerId: 1A-stationary-combustion-other
+      mapLabel: |
+        ::js ({ dateFns, datetime, compareDatetime }) => {
+          return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
+        }      
+    legend:
+      unit: 
+       label: Molecules CH₄/cm²/s
+      type: gradient
+      min: 0
+      max: 1096969945088
+      stops:
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                 
   - id: 1A-stationary-combustion-other
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Other Stationary combustion (annual)
@@ -852,13 +1626,31 @@ layers:
       min: 0
       max: 1096969945088
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"                
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                   
   - id: 1A-mobile-combustion-othe
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Other Mobile combustion (annual)
@@ -888,13 +1680,31 @@ layers:
       min: 0
       max: 356184489984
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"            
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                
   - id: 1A-abn-ong-other
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Other Abandoned Oil and Gas Wells (annual)
@@ -924,13 +1734,31 @@ layers:
       min: 0
       max: 4824812748800
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"            
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                
   - id: 1A-petro-production-other
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Other Petrochemical Production (annual)
@@ -960,13 +1788,31 @@ layers:
       min: 0
       max: 4687914860544
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"            
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                
   - id: 1A-ferroalloy-production-other
     stacCol: epa-ch4emission-yeargrid-v2express
     name: Other Ferroalloy Production (annual)
@@ -996,13 +1842,31 @@ layers:
       min: 0
       max: 99607961600
       stops:
-        - "#60007d"
-        - "#30137d"
-        - "#1960ae"
-        - "#7ac300"
-        - "#f2ce00"
-        - "#ef6a01"
-        - "#cc0019"                 
+        - "#6F4C9B"
+        - "#6059A9"
+        - "#5568B8"
+        - "#4D8AC6"
+        - "#4E96BC"
+        - "#549EB3"
+        - "#59A5A9"
+        - "#60AB9E"
+        - "#69B190"
+        - "#77B77D"
+        - "#8CBC68"
+        - "#A6BE54"
+        - "#BEBC48"
+        - "#D1B541"       
+        - "#DDAA3C"
+        - "#E49C39"
+        - "#E78C35"
+        - "#E67932"
+        - "#E4632D"
+        - "#DF4828"
+        - "#DA2222"  
+        - "#B8221E"
+        - "#95211B"
+        - "#721E17"
+        - "#521A13"                    
                       
 ---
 
@@ -1012,10 +1876,12 @@ layers:
     
     **Data Version Details**
     The gridded GHGI is continually updated to capture ongoing updates and improvements to the U.S. National GHG Inventory. The gridded GHGI currently includes 3 versions, each covering different emission years, and with methane emissions consistent with a different U.S. National Inventory Reports. 
-    Gridded GHGI Version 1 (0.1°×0.1° emission maps for 2012, consistent with the 2016 GHGI Report)
-    Gridded GHGI Version 2 (0.1°×0.1° emission maps for 2012-2018, consistent with the 2020 GHGI Report)
-    Gridded GHGI Version 2 Express Extension (0.1°×0.1° emission maps for 2012-2020, consistent with the 2022 GHGI Report)
+    1.Gridded GHGI Version 1 (0.1°×0.1° emission maps for 2012, consistent with the 2016 GHGI Report)
+    2.Gridded GHGI Version 2 (0.1°×0.1° emission maps for 2012-2018, consistent with the 2020 GHGI Report)
+    3.Gridded GHGI Version 2 Express Extension (0.1°×0.1° emission maps for 2012-2020, consistent with the 2022 GHGI Report)
+    
     Data in the U.S. GHG Center Data Explorer correspond to the V2 Express Extension dataset (#3 above). 
+    
     For more information Version 2 and the Express Extension (#2 & #3), visit the latest Data Repository on Zenodo: [https://zenodo.org/record/7672124](https://zenodo.org/record/7672124)
    
     - **Temporal Extent:** 2012 - 2020    
@@ -1038,7 +1904,7 @@ layers:
   <Prose>
     ## Source Data Product Citation
     Gridded GHGI V2 & Express Extension: 
-    McDuffie, Erin, E., Maasakkers, Joannes, D., Sulprizio, Melissa, P., Chen, Candice, Schultz, Maggie, Brunelle, Lily, Thrush, Ryan, Steller, John, Sherry, Christopher, Jacob, Daniel, J., Jeong, Seongeun, Irving, Bill, & Weitz, Melissa. (2023). Gridded EPA U.S. Anthropogenic Methane Greenhouse Gas Inventory (gridded GHGI) (Preprint) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7672124
+    McDuffie, Erin, E., Maasakkers, Joannes, D., Sulprizio, Melissa, P., Chen, Candice, Schultz, Maggie, Brunelle, Lily, Thrush, Ryan, Steller, John, Sherry, Christopher, Jacob, Daniel, J., Jeong, Seongeun, Irving, Bill, & Weitz, Melissa. (2023). Gridded EPA U.S. Anthropogenic Methane Greenhouse Gas Inventory (gridded GHGI) (Preprint) [Data set]. *Zenodo*. https://doi.org/10.5281/zenodo.7672124
     
     Gridded GHGI Version 1
     Maasakkers, J. D., Jacob, D. J., Sulprizio, M. P., Turner, A. J., Weitz, M., Wirth, T., Hight, C., DeFigueiredo, M., Desai, M., Schmeltz, R., Hockstad, L., Bloom, A. A., Bowman, K. W., Jeong, S., Fischer, M. L. (2016) A Gridded National Inventory of U.S. Methane Emissions [Data set]. Available at: [https://www.epa.gov/ghgemissions/gridded-2012-methane-emissions#data](https://www.epa.gov/ghgemissions/gridded-2012-methane-emissions#data) 
@@ -1054,13 +1920,14 @@ layers:
     Users of these datasets are asked to cite the original references ([Maasakkers, et al., (2016)](https://pubs.acs.org/doi/10.1021/acs.est.6b02878) or [Maasakkers et al. (2023)](https://doi.org/10.31223/X5RQ3M)) in their publications and are encouraged to reach out to the development team with further questions. 
     
     ## Key Publications
-    Maasakkers, J., McDuffie, E., Sulprizio, M., Chen, C., Schultz, M., Brunelle, L., Thrush, R., Steller, J., Sherry, C., Jacob, D., Jeong, S., Irving, B., & Weitz, M. (2023). A gridded inventory of annual 2012-2018 U.S. anthropogenic methane emissions. EarthArXiv (California Digital Library). https://doi.org/10.31223/x5rq3m
+    Maasakkers, J., McDuffie, E., Sulprizio, M., Chen, C., Schultz, M., Brunelle, L., Thrush, R., Steller, J., Sherry, C., Jacob, D., Jeong, S., Irving, B., & Weitz, M. (2023). A gridded inventory of annual 2012-2018 U.S. anthropogenic methane emissions. *EarthArXiv (California Digital Library)*. https://doi.org/10.31223/x5rq3m
     
     ## Other Relevant Publications
-    Maasakkers, J., Jacob, D., Sulprizio, M., Turner, A., Weitz, M., Wirth, T., Hight, C., DeFigueiredo, M., Desai, M., Schmeltz, R., Hockstad, L., Bloom, A., Bowman, K., Jeong, S., Fischer, M. (2016). Gridded National Inventory of U.S. Methane Emissions. Environmental Science & Technology, 50(23), 13123-13133. https://doi.org/10.1021/acs.est.6b02878
+    Maasakkers, J., Jacob, D., Sulprizio, M., Turner, A., Weitz, M., Wirth, T., Hight, C., DeFigueiredo, M., Desai, M., Schmeltz, R., Hockstad, L., Bloom, A., Bowman, K., Jeong, S., Fischer, M. (2016). Gridded National Inventory of U.S. Methane Emissions. *Environmental Science & Technology*, 50(23), 13123-13133. https://doi.org/10.1021/acs.est.6b02878
     
     ## Acknowledgment
     This dataset was developed in collaboration between researchers at the U.S. EPA, Netherlands Institute for Space Research (SRON), Harvard University, and Lawrence Berkeley National Laboratory.     
+    
     ## License
     [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode) (CC BY 4.0) 
     
