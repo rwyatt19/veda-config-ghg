@@ -6,11 +6,7 @@
       "noaa"
     ],
     "catalogs": [
-      "CEOS National Top-Down CO₂ Budgets",
-      "EMIT Methane Emission Plumes",
-      "ODIAC Fossil Fuel CO₂ Emissions",
-      "SEDAC Gridded World Population Data",
-      "Wetland Methane Emissions, LPJ-wsl Model"
+      "Methane Emissions"
     ]
   }
   
