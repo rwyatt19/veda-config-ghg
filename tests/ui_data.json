@@ -6,7 +6,17 @@
       "noaa"
     ],
     "catalogs": [
-      "Methane Emissions"
+      "Air-Sea CO₂ Flux, ECCO-Darwin Model v5",
+      "CASA-GFED3 Land Carbon Flux",
+      "EMIT methane point source plume complexes",
+      "GOSAT-based Top-down Methane Budgets",
+      "Gridded Anthropogenic Methane Emissions Inventory",
+      "OCO-2 GEOS Assimilated CO₂ Concentrations",
+      "OCO-2 MIP-based Top-Down CO₂ Budgets",
+      "ODIAC Fossil Fuel CO₂ Emissions",
+      "SEDAC Gridded World Population Data",
+      "TM5-4DVar Isotopic CH₄ Inverse Fluxes",
+      "Wetland Methane Emissions, LPJ-wsl Model"
     ]
   }
   
