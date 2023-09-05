@@ -66,22 +66,29 @@ def logo_validation(dashboard_base_url):
     if ui_password:
         password_input()
     logo_src_list = data["logos"]
-    missing_logos = []
-    y_coordinates = []
+    missing_logos = {}
+    y_coordinates_dict = {}
     for src in logo_src_list:
+        src = src.split("/")[-1].split(".")[0]
         image_elements = driver.find_elements(By.XPATH, f"//img[contains(@src, '{src}')]")
         if not image_elements:
-            missing_logos.append(src)
+            missing_logos[src] = []
             encountered_errors.append(f"Missing logo: {src}")
-            save_page("missing-logos")
         else:
+            y_coordinates_dict[src] = []
             for image_element in image_elements:
                 image_element_y = image_element.location['y']
-                y_coordinates.append(image_element_y)
-    mean_y = statistics.mean(y_coordinates)
-    absolute_deviations = [abs(y - mean_y) for y in y_coordinates]
-    mad = statistics.mean(absolute_deviations)
-    if mad > 13:
+                y_coordinates_dict[src].append(image_element_y)
+    misalignments_found = False
+    for i in range(max(len(y) for y in y_coordinates_dict.values())):
+        position_values = [y[i] for y in y_coordinates_dict.values() if len(y) > i]
+        mean_position = statistics.mean(position_values)
+        absolute_deviations = [abs(y - mean_position) for y in position_values]
+        mad = statistics.mean(absolute_deviations)
+        if mad > 13:
+            misalignments_found = True
+            break 
+    if misalignments_found:
         encountered_errors.append("Logos are out of alignment.")
         save_page("misaligned-logos")
 
