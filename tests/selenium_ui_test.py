@@ -110,7 +110,11 @@ def dataset_verification(dashboard_base_url):
     driver.get(f"{dashboard_base_url}/analysis")
     if ui_password:
         password_input()
-    map_canvas = driver.find_element(By.XPATH, '//canvas[@class="mapboxgl-canvas"]')
+    try:
+        map_canvas = driver.find_element(By.XPATH, '//canvas[@class="mapboxgl-canvas"]')
+    except NoSuchElementException:
+        encountered_errors.append("Map is not loading correctly")
+        save_page("map-load-fail")
     corner_coordinates = [
         (-20, 20),
         (60, 20),
