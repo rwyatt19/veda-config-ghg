@@ -149,7 +149,7 @@ def dataset_verification(dashboard_base_url):
             EC.presence_of_element_located((By.XPATH, "//*[contains(@class, 'recharts-surface')]"))
         )
     except TimeoutException:
-        save_page("missing-map-datasets")
+        save_page("generated-map-datasets")
         encountered_errors.append("Map datasets are not being generated properly")
 
 # Retry loop
