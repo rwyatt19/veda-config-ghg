@@ -129,6 +129,7 @@ def dataset_verification(dashboard_base_url):
     map_canvas.send_keys(Keys.ENTER)
     time.sleep(3)
     action_button = driver.find_element(By.XPATH, '//span[contains(text(), "Actions")]/following::button[contains(@class, "StyledButton")]')
+    wait_for_clickable(action_button)
     driver.execute_script("arguments[0].click();", action_button)
     driver.find_element(By.XPATH, '//li//button[contains(text(), "Last 10 years")]').click()
     try:
@@ -149,7 +150,7 @@ def dataset_verification(dashboard_base_url):
             EC.presence_of_element_located((By.XPATH, "//*[contains(@class, 'recharts-surface')]"))
         )
     except TimeoutException:
-        save_page("generated-map-datasets")
+        save_page("missing-generated-map-datasets")
         encountered_errors.append("Map datasets are not being generated properly")
 
 # Retry loop
