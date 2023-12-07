@@ -13,8 +13,10 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - name: Install dependencies
-      run: npm install -g yarn && yarn
+    - name: Install yarn
+      run: npm install -g yarn
+    - name: Run Veda setup
+      run: ./.veda/setup
     - name: Install Playwright Browsers
       run: yarn playwright install --with-deps
     - name: Run Playwright tests
