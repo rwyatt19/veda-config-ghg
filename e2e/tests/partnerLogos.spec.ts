@@ -1,6 +1,6 @@
 import { test, expect } from '../pages/basePage';
 
-test('load collaborator logos in main content of /home route', async ({
+test('load collaborator logos in header content of /home route', async ({
   page,
   homePage,
   logos,
@@ -9,7 +9,7 @@ test('load collaborator logos in main content of /home route', async ({
   await expect(homePage.mainContent, `home page should load`).toBeVisible();
 
   for (const logo of logos) {
-    const img = homePage.mainContent.getByAltText(`${logo} logo`);
+    const img = homePage.headingContainer.getByAltText(`${logo} logo`);
     // images are lazy loaded. kick off loading
     await img.scrollIntoViewIfNeeded();
     await expect(img).toBeVisible();

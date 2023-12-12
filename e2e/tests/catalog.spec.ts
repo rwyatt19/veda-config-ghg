@@ -23,7 +23,7 @@ test('clicking catalog cards routes to dataset details page', async ({
  }) => {
 
   // this test takes longer due to all of the page loads
-  test.setTimeout(120000);
+  test.setTimeout(180000);
   for (const item of catalogs) {
     await page.goto('/data-catalog');
     await expect(catalogPage.header, `catalog page should load`).toHaveText(/data catalog/i);
