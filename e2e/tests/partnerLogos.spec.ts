@@ -1,4 +1,4 @@
-import { test, expect } from './pages/basePage';
+import { test, expect } from '../pages/basePage';
 
 test('load collaborator logos in main content of /home route', async ({
   page,

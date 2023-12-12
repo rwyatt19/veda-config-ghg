@@ -1,4 +1,4 @@
-import { test, expect } from './pages/basePage';
+import { test, expect } from '../pages/basePage';
 
 test('load catalogs on /data-catalog route', async ({
   page,
