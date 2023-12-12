@@ -1,8 +1,4 @@
-import { test as base } from '@playwright/test';
-import type { TestOptions } from './uiDataTypes';
-
-
-export const test = base.extend<TestOptions>({
+{
   "logos": [
     "epa",
     "nasa",
@@ -22,8 +18,6 @@ export const test = base.extend<TestOptions>({
     "OCO-2 GEOS Column CO₂ Concentrations",
     "ODIAC Fossil Fuel CO₂ Emissions",
     "SEDAC Gridded World Population Density",
-    "TM5-4DVar Isotopic CH₄ Inverse Fluxes",
-  ],
-});
-
-export const expect = test.expect;
+    "TM5-4DVar Isotopic CH₄ Inverse Fluxes"
+  ]
+}

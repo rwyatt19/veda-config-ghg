@@ -1,4 +1,4 @@
-import { test as base } from '../testFixture';
+import { test as base } from '@playwright/test';
 import AboutPage from './aboutPage';
 import HomePage from './homePage';
 import FooterComponent from './footerComponent';

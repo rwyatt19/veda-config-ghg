@@ -1,9 +1,10 @@
 import { test, expect } from '../pages/basePage';
+const logos = JSON.parse(require('fs').readFileSync('e2e/testData.json', 'utf8'))['logos'];
+
 
 test('load collaborator logos in header content of /home route', async ({
   page,
   homePage,
-  logos,
  }) => {
   await page.goto('/')
   await expect(homePage.mainContent, `home page should load`).toBeVisible();
@@ -19,7 +20,6 @@ test('load collaborator logos in header content of /home route', async ({
     test('load collaborator logos in footer', async ({
       page,
       footerComponent,
-      logos,
      }) => {
       await page.goto('/')
       await expect(footerComponent.footer, `footer should load`).toBeVisible();
@@ -35,7 +35,6 @@ test('load collaborator logos in header content of /home route', async ({
   test('load collaborator logos in /about route', async ({
     page,
     aboutPage,
-    logos,
    }) => {
     await page.goto('/about')
     for (const logo of logos) {

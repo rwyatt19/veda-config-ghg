@@ -12,8 +12,7 @@ Supporting files within the repo are in the following structure:
    │
    │─── README.md
    │─── playwright.config.ts - imports our global setup, defines preferred browsers, & number of retries
-   │─── testFixture.ts - contains all project specific test data such as expected logos and catalogs
-   │─── uiDataTypes.d.ts - contains typings for items in the testFixture.ts file
+   │─── testData.json - contains all project specific test data such as expected logos and catalogs
    └─── /pages
    │      └─── basePage.ts - imports all seeded data and PageObjects into our `test` object.
    │      │
@@ -23,14 +22,14 @@ Supporting files within the repo are in the following structure:
 
 ## Usage
 
-Test data for this suite is handled in a fixture located in e2e/testFixture.ts  To use this suite after updating, first update the fixture file to include the following:
+Test data for this suite is handled in a json located in e2e/testData.json. To use this suite after updating, first update the file to include the following:
 
 - A list of partner logos you would like to check render correctly
 - A list of catalog titles you would like to check exist on the catalogs page (Partial titles are OK)
 
 ## Updating Tests
 
-If the layout of a page changes, then the tests may no longer be able to interact with locators. These locators are defined in the Page Objects defined in `/e2e/pages`. The Playwright framewok provides multiple ways to choose elements to interact with.  The recomended ones are defined in the [Playwright documentation](https://playwright.dev/docs/locators#quick-guide).
+If the layout of a page changes, then the tests may no longer be able to interact with locators. These locators are defined in the Page Objects defined in `/e2e/pages`. The Playwright framework provides multiple ways to choose elements to interact with.  The recomended ones are defined in the [Playwright documentation](https://playwright.dev/docs/locators#quick-guide).
 
 Any new pages will need to have new page objects created and then imported into the `basePage.ts` file following th format of existing pages.  This allows all tests to reference the page.
 
