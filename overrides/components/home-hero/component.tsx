@@ -78,7 +78,7 @@ export default function HomeHero(props) {
             <VarHeading size="jumbo">U.S. Greenhouse Gas Center</VarHeading>
             <p>
               Uniting Data and Technology to Empower Tomorrow's Climate
-              Solutions
+              Solutions - UPDATING TO TEXT TO TEST - THIS IS NOT TO BE MERGED
             </p>
           </HeroHeadline>
           <Partners variation="negative" size="big" />
