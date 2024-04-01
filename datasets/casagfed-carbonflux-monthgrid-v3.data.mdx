@@ -1,18 +1,18 @@
 ---
-id: casagfed-carbonflux-monthgrid-v3
-name: CASA-GFED3 Land Carbon Flux
+id: micasa-carbonflux-daygrid-v1
+name: MiCASA Land Carbon Flux v1
 description: Global, monthly 0.5 degree resolution carbon fluxes from Net Primary Production (NPP), heterotrophic respiration (Rh), wildfire emissions (FIRE), and fuel wood burning emissions (FUEL) derived from the CASA-GFED model, version 3
 usage:
-  - url: 'https://us-ghg-center.github.io/ghgc-docs/cog_transformation/casagfed-carbonflux-monthgrid-v3.html'
+  - url: 'https://us-ghg-center.github.io/ghgc-docs/cog_transformation/micasa-carbonflux-daygrid-v1.html'
     label: Notebook showing data transformation to COG for ingest to the US GHG Center
     title: 'Data Transformation Notebook'
-  - url: 'https://us-ghg-center.github.io/ghgc-docs/user_data_notebooks/casagfed-carbonflux-monthgrid-v3_User_Notebook.html'
+  - url: 'https://us-ghg-center.github.io/ghgc-docs/user_data_notebooks/micasa-carbonflux-daygrid-v1_User_Notebook.html'
     label: Notebook to read, visualize, and explore data statistics
     title: 'Sample Data Notebook'
-  - url: 'https://hub.ghg.center/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUS-GHG-Center%2Fghgc-docs&urlpath=tree%2Fghgc-docs%2Fuser_data_notebooks%2Fcasagfed-carbonflux-monthgrid-v3_User_Notebook.ipynb&branch=main'
+  - url: 'https://hub.ghg.center/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUS-GHG-Center%2Fghgc-docs&urlpath=tree%2Fghgc-docs%2Fuser_data_notebooks%2Fmicasa-carbonflux-daygrid-v1_User_Notebook.ipynb&branch=main'
     label: Run example notebook
     title: Interactive Session in the US GHG Center JupyterHub (requires account)
-  - url: https://dljsq618eotzp.cloudfront.net/browseui/index.html#casagfed-carbonflux-monthgrid-v3/
+  - url: https://dljsq618eotzp.cloudfront.net/browseui/index.html#micasa-carbonflux-daygrid-v1/
     label: Browse and download the data
     title: Data Browser
 media:
@@ -34,8 +34,8 @@ taxonomy:
     values:
       - Model Output
 layers:
-  - id: casa-gfed-co2-flux
-    stacCol: casagfed-carbonflux-monthgrid-v3
+  - id: micasa-co2-flux-npp
+    stacCol: micasa-carbonflux-daygrid-v1
     name: Net Primary Production (NPP)
     type: raster
     description: Model-estimated net primary production (NPP), which is the amount of carbon available from plants
@@ -53,8 +53,8 @@ layers:
         - 0
         - 0.3
     compare:
-      datasetId: casagfed-carbonflux-monthgrid-v3
-      layerId: casa-gfed-co2-flux
+      datasetId: micasa-carbonflux-daygrid-v1
+      layerId: micasa-co2-flux-npp
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           if (dateFns && datetime && compareDatetime) return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -79,8 +79,8 @@ layers:
     analysis:
       metrics:
         - mean
-  - id: casa-gfed-co2-flux-hr
-    stacCol: casagfed-carbonflux-monthgrid-v3
+  - id: micasa-co2-flux-hr
+    stacCol: micasa-carbonflux-daygrid-v1
     name: Heterotrophic Respiration (Rh)
     type: raster
     description: Model-estimated heterotrophic respiration (Rh), which is the flux of carbon from the soil to the atmosphere
@@ -98,8 +98,8 @@ layers:
         - 0
         - 0.3
     compare:
-      datasetId: casagfed-carbonflux-monthgrid-v3
-      layerId: casa-gfed-co2-flux-hr
+      datasetId: micasa-carbonflux-daygrid-v1
+      layerId: micasa-co2-flux-hr
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           if (dateFns && datetime && compareDatetime) return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -124,8 +124,8 @@ layers:
     analysis:
       metrics:
         - mean
-  - id: casa-gfed-co2-flux-nee
-    stacCol: casagfed-carbonflux-monthgrid-v3
+  - id: micasa-co2-flux-nee
+    stacCol: micasa-carbonflux-daygrid-v1
     name: Net Ecosystem Exchange (NEE)
     type: raster
     description: Model-estimated net ecosystem exchange (NEE), which is the net carbon flux to the atmosphere
@@ -143,8 +143,8 @@ layers:
         - -0.1
         - 0.1
     compare:
-      datasetId: casagfed-carbonflux-monthgrid-v3
-      layerId: casa-gfed-co2-flux-nee
+      datasetId: micasa-carbonflux-daygrid-v1
+      layerId: micasa-co2-flux-nee
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           if (dateFns && datetime && compareDatetime) return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -167,8 +167,8 @@ layers:
     analysis:
       metrics:
         - mean
-  - id: casa-gfed-co2-flux-fe
-    stacCol: casagfed-carbonflux-monthgrid-v3
+  - id: micasa-co2-flux-fe
+    stacCol: micasa-carbonflux-daygrid-v1
     name: Fire Emissions (FIRE)
     type: raster
     description: Model-estimated flux of carbon to the atmosphere from wildfires
@@ -186,8 +186,8 @@ layers:
         - 0
         - 0.3
     compare:
-      datasetId: casagfed-carbonflux-monthgrid-v3
-      layerId: casa-gfed-co2-flux-fe
+      datasetId: micasa-carbonflux-daygrid-v1
+      layerId: micasa-co2-flux-fe
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           if (dateFns && datetime && compareDatetime) return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -212,8 +212,8 @@ layers:
     analysis:
       metrics:
         - mean
-  - id: casa-gfed-co2-flux-fuel
-    stacCol: casagfed-carbonflux-monthgrid-v3
+  - id: micasa-co2-flux-fuel
+    stacCol: micasa-carbonflux-daygrid-v1
     name: Wood Fuel Emissions (FUEL)
     type: raster
     description: Model-estimated flux of carbon to the atmosphere from wood burned for fuel
@@ -231,8 +231,8 @@ layers:
         - 0
         - 0.03
     compare:
-      datasetId: casagfed-carbonflux-monthgrid-v3
-      layerId: casa-gfed-co2-flux-fuel
+      datasetId: micasa-carbonflux-daygrid-v1
+      layerId: micasa-co2-flux-fuel
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           if (dateFns && datetime && compareDatetime) return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -283,7 +283,7 @@ layers:
     ## Disclaimer
     All data provided in the US GHG Center has been transformed from the original format (NetCDF) into Cloud Optimized GeoTIFF ([COG](https://www.cogeo.org/)). Careful quality checks are used to ensure data transformation has been performed correctly.
 
-    The full title of this dataset, GEOS-Carb CASA-GFED Monthly Fire Fuel NPP Rh NEE Fluxes 0.5 degree x 0.5 degree V3, has been shortened for display on the US GHG Center website. The short name of the source dataset is GEOS_CASAGFED_M_FLUX, but it is referred to as casagfed-carbonflux-monthgrid-v3 within the Center system. The source dataset in NetCDF format is available from the [Goddard Earth Science Data and Information Services Center (GES DISC)](https://doi.org/10.5067/03147VMJE8J9). A user guide is available at [https://acdisc.gesdisc.eosdis.nasa.gov/data/CMS/GEOS_CASAGFED_M_FLUX.3/doc/README.CASA_GFED.pdf](https://acdisc.gesdisc.eosdis.nasa.gov/data/CMS/GEOS_CASAGFED_M_FLUX.3/doc/README.CASA_GFED.pdf)
+    The full title of this dataset, GEOS-Carb CASA-GFED Monthly Fire Fuel NPP Rh NEE Fluxes 0.5 degree x 0.5 degree V3, has been shortened for display on the US GHG Center website. The short name of the source dataset is GEOS_CASAGFED_M_FLUX, but it is referred to as micasa-carbonflux-daygrid-v1 within the Center system. The source dataset in NetCDF format is available from the [Goddard Earth Science Data and Information Services Center (GES DISC)](https://doi.org/10.5067/03147VMJE8J9). A user guide is available at [https://acdisc.gesdisc.eosdis.nasa.gov/data/CMS/GEOS_CASAGFED_M_FLUX.3/doc/README.CASA_GFED.pdf](https://acdisc.gesdisc.eosdis.nasa.gov/data/CMS/GEOS_CASAGFED_M_FLUX.3/doc/README.CASA_GFED.pdf)
 
     ## Key Publications
     Ott, L., Collatz, J., & Kawa, R. (2020). *Description of GEOS-Carb CASA-GFED3 Land Carbon Flux Products*. GES DISC. [https://acdisc.gesdisc.eosdis.nasa.gov/data/CMS/GEOS_CASAGFED_M_FLUX.3/doc/README.CASA_GFED.pdf](https://acdisc.gesdisc.eosdis.nasa.gov/data/CMS/GEOS_CASAGFED_M_FLUX.3/doc/README.CASA_GFED.pdf)
@@ -308,9 +308,9 @@ layers:
     [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode) (CC0 1.0)
 
     ## Data Stewardship
-    - [Data Workflow](https://us-ghg-center.github.io/ghgc-docs/data_workflow/casagfed-carbonflux-monthgrid-v3_Data_Flow.html)
-    - [Data Transformation Code](https://us-ghg-center.github.io/ghgc-docs/cog_transformation/casagfed-carbonflux-monthgrid-v3.html)
-    - [US GHG Center Data Intake Processing and Verification Report](https://us-ghg-center.github.io/ghgc-docs/processing_and_verification_reports/casagfed-carbonflux-monthgrid-v3_Processing%20and%20Verification%20Report.html)
+    - [Data Workflow](https://us-ghg-center.github.io/ghgc-docs/data_workflow/micasa-carbonflux-daygrid-v1_Data_Flow.html)
+    - [Data Transformation Code](https://us-ghg-center.github.io/ghgc-docs/cog_transformation/micasa-carbonflux-daygrid-v1.html)
+    - [US GHG Center Data Intake Processing and Verification Report](https://us-ghg-center.github.io/ghgc-docs/processing_and_verification_reports/micasa-carbonflux-daygrid-v1_Processing%20and%20Verification%20Report.html)
 
   </Prose>
 </Block>
