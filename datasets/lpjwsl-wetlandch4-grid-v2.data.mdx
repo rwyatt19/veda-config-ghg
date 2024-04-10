@@ -59,7 +59,7 @@ layers:
         }
     legend:
       unit:
-        label: kg CH₄/m²/s
+        label: g CH₄/m²/day
       type: gradient
       min: 0
       max: 0.00000000002
@@ -99,7 +99,7 @@ layers:
         }
     legend:
       unit:
-        label: kg CH₄/m²/s
+        label: g CH₄/m²/day
       type: gradient
       min: 0
       max: 0.00000000002
@@ -139,7 +139,7 @@ layers:
         }
     legend:
       unit:
-        label: kg CH₄/m²/s
+        label: g CH₄/m²/day
       type: gradient
       min: 0
       max: 0.00000000002
@@ -156,17 +156,16 @@ layers:
 
 <Block type='wide'>
   <Prose>
-    Methane (CH₄) emissions from vegetated wetlands are estimated to be the largest natural source of methane in the global CH₄ budget, contributing to roughly one third of the total of natural and anthropogenic emissions. Wetland CH₄ is produced by microbes breaking down organic matter in the oxygen deprived environment of inundated soils. Due to limited data availability, the details of the role of wetland CH₄ emissions have thus far been underrepresented. Using the Earth Observation SIMulator  version (LPJ-EOSIM) of the Lund-Potsdam-Jena Dynamic Global Vegetation Model (LPJ-DGVM) global CH₄ emissions from wetlands are estimated at 0.5 x 0.5 degree spatial resolution by simulating wetland extent and using characteristics of these inundated areas, such as soil moisture, temperature, and carbon content, to estimate CH₄ quantities emitted into the atmosphere. Highlighted areas displayed in this dataset show concentrated methane sources from tropical and high latitude ecosystems. The LPJ-EOSIM Wetland Methane Emissions data product presented here consists of global daily model estimates of terrestrial wetland CH₄ emissions from 1990 - ongoing. These data are regularly used in conjunction with NASA’s Goddard Earth Observing System (GEOS) model to simulate the impact of wetlands and other methane sources on atmospheric methane concentrations, to compare against satellite and airborne data, and to improve understanding and prediction of wetland emissions.  
+    Methane (CH₄) emissions from vegetated wetlands are estimated to be the largest natural source of methane in the global CH₄ budget, contributing to roughly one third of the total of natural and anthropogenic emissions. Wetland CH₄ is produced by microbes breaking down organic matter in the oxygen deprived environment of inundated soils. Due to limited data availability, the details of the role of wetland CH₄ emissions have thus far been underrepresented. Using the Earth Observation SIMulator  version (LPJ-EOSIM) of the Lund-Potsdam-Jena Dynamic Global Vegetation Model (LPJ-DGVM) global CH₄ emissions from wetlands are estimated at 0.5 x 0.5 degree spatial resolution. By simulating wetland extent and using characteristics of inundated areas, such as wetland soil moisture, temperature, and carbon content, the model provides estimates of CH₄ quantities emitted into the atmosphere. This dataset shows concentrated methane sources from tropical and high latitude ecosystems. The LPJ-EOSIM Wetland Methane Emissions dataset consists of global daily model estimates of terrestrial wetland methane emissions from 1990 to the present, with data added bimonthly. The estimates are regularly used in conjunction with NASA’s Goddard Earth Observing System (GEOS) model to simulate the impact of wetlands and other methane sources on atmospheric methane concentrations, to compare against satellite and airborne data, and to improve understanding and prediction of wetland emissions.  
     - **Temporal extent:** January 1, 1990 - ongoing 
     - **Temporal resolution:** Daily      
     - **Spatial extent:** Global    
     - **Spatial resolution:** 0.5° x 0.5°   
-    - **Data units:** Kilograms of methane per meter squared per second (kg CH₄/m²/s)       
+    - **Data units:** Kilograms of methane per meter squared per second (g CH₄/m²/day)       
     - **Data type:** Research
     - **Data Latency:** Updated monthly with a 2 month latency
 
-    **Scientific Details:** For this dataset, wetlands are defined as land areas that are either permanently or seasonally saturated, excluding small ponds, lakes, and coastal wetlands. Permanent wetlands comprise three general types: mineral wetlands (swamps and marshes), peatlands (permafrost, bog, fens), and seasonally flooded shallow water (floodplains). The methane-producing area is thus linked to inundation and freeze−thaw dynamics, which change geographically and temporally in response to soil water dynamics. Wetland emissions of CH₄ are estimated as a function of substrate, soil temperature, and soil moisture. The net flux of CH₄ is defined as the heterotrophic respiration for the area of a grid cell covered by wetland, scaled by a fixed ratio of soil carbon to CH₄ emissions and by a modifier that varies the CH₄ emission intensity for different biomes. The LPJ-EOSIM land surface model uses a two-layer bucket model to simulate soil hydrology and uses a modified version of the topography-based hydrological model (TOPMODEL) to determine the likely distribution and dynamics of permafrost and inundated areas. Input climate forcing data comes from Modern-Era Retrospective analysis for Research and Applications Version 2 (MERRA-2) data, and the European Centre for Medium-Range Weather Forecasts (ECMWF)Re-Analysis (ERA5). Here, we host three datasets: two daily datasets of wetland methane forced by MERRA-2 and ERA5, along with a single dataset of the mean of both MERRA-2 and ERA5 (mean ensemble). The ERA5 and MERRA-2 reanalysis datasets differ in how they represent variables such as precipitation and temperature, which affects LPJ-EOSIM estimates of wetland methane. The mean product is provided to incorporate the effects of both driver sets.The ensemble mean product has performed better against known data (as measured by the [ILAMB](https://www.ilamb.org/) benchmarking tool) than the two constituent products and as such we recommend its use. 
-  </Prose>
+    **Scientific Details:** For this dataset, wetlands are defined as land areas that are either permanently or seasonally saturated, excluding small ponds, lakes, and coastal wetlands. Permanent wetlands comprise three general types: mineral wetlands (swamps and marshes), peatlands (permafrost, bog, fens), and seasonally flooded shallow water (floodplains). The methane-producing area is thus linked to inundation and freeze−thaw dynamics, which change geographically and temporally in response to soil water dynamics. Wetland emissions of CH₄ are estimated as a function of substrate, soil temperature, and soil moisture. The net flux of CH₄ is defined as the heterotrophic respiration for the area of a grid cell covered by wetland, scaled by a fixed ratio of soil carbon to CH₄ emissions and by a modifier that varies the CH₄ emission intensity for different biomes. The LPJ-EOSIM land surface model uses a two-layer bucket model to simulate soil hydrology and uses a modified version of the topography-based hydrological model (TOPMODEL) to determine the likely distribution and dynamics of permafrost and inundated areas. Input climate forcing data comes from two different data products: the Modern-Era Retrospective analysis for Research and Applications Version 2 (MERRA-2) data and the European Centre for Medium-Range Weather Forecasts (ECMWF) Re-Analysis (ERA5). This LPJ-EOSIM dataset contains 3 data layers : two wetland methane orced by MERRA-2 and ERA5 respectively, and a mean ensemble data product forced by the  mean of both MERRA-2 and ERA5.. The ERA5 and MERRA-2 reanalysis datasets differ in how they represent variables such as precipitation and temperature, which affects  wetland methane estimates in the LPJ-EOSIM. The ensemble mean product is recommended for use as it has performed better against known data, as measured by the [ILAMB](https://www.ilamb.org/) benchmarking tool, than the two constituent MERRA-2 and ERA5 data products. 
 </Block>
 <Block>
   <Prose>
@@ -176,17 +175,17 @@ layers:
     ## Dataset Accuracy
 
     ## Version History
-    The current dataset version is v2, which replaced v1 in the US GHG Center in April 2024. Summary of version update changes:
+    The current dataset version is v2, which replaced v1 in the US GHG Center in April 2024. Summary of version 2 update changes:
     - Model updates and improvements, including improved data latency with more regular updates and driver-specific model recalibration
     - Removal of monthly data layer
     - Addition of two new data layers: LPJ-EOSIM model estimated wetland methane emissions using ERA5 climate input forcing data, and using the mean of both MERRA-2 and ERA5 climate input forcing data (mean ensemble). For the daily data layer, the v1 dataset only provided LPJ-EOSIM estimates using MERRA-2 climate input forcing data until the end of 2021. 
-    - v2 data was delivered to the US GHG Center in Cloud Optimized GeoTIFF (COG) format, whereas v1 data was delivered in NetCDF format and then transformed into COG
-    - v2 data is provided in units of kg CH₄/m²/s, whereas v1 data was provided in different units
+    - v2 data is delivered to the US GHG Center in Cloud Optimized GeoTIFF (COG) format (v1 data was in NetCDF format and transformed to COG)
+    - v2 data is provided in units of g CH₄/m²/day
     - v1 data remains accessible from the [GMAO website](https://gmao.gsfc.nasa.gov/gmaoftp/lott/CH4/wetlands/) 
 
     ## Disclaimer
     Shifting spatial patterns of vascular plants affect the transport of CH₄ from soil into the atmosphere. The absence of this effect from the LPJ-EOSIM model could lead to the underestimation of CH₄ emissions. Additionally, the biogeographical distribution of methane-producing microbes and the mechanisms by which they grow and generate byproducts may have a significant impact on CH₄ emissions but are not well understood, adding additional uncertainty to current models. Uncertainties in radiative forcing estimates also contribute to model output uncertainty. Care should be taken when running analyses, as these data are model simulations and not Earth observations. 
-    The wetland CH₄ data presented here have been subjected to rigorous quality checks, including comprehensive benchmarking against ground-truth model simulations and observations. Each file has been visually and programmatically checked for outliers or missing data, but errors can still occur. In the event of a re-process, a note will be posted on this website and data will be rolled back.
+    The wetland CH₄ data presented here have been subjected to rigorous quality checks, including comprehensive benchmarking against ground-truth model simulations and observations. Each file has been visually and programmatically checked for outliers or missing data, but errors can still occur. In the event of a reprocessing, a note will be posted on this website and the dataset will be updated.    
     
     ## Key Publications
     Zhang, Z., Zimmermann, N.E., Stenke, A., Li, X., Hodson, E.L., Zhu, G., Huang, C., & Poulter, B. (2017). Emerging role of wetland methane emissions in driving 21st century climate change. *Proceedings of the National Academy of Sciences, 114(36), 9647–9652*. [https://doi.org/10.1073/pnas.1618765114](https://doi.org/10.1073/pnas.1618765114)
@@ -205,6 +204,8 @@ layers:
     ## Acknowledgment
     The LPJ-EOSIM model is based on the development of the Lund-Potsdam-Jena Dynamic Global Vegetation Model (LPJ-DGVM) [by researchers at institutions in Germany and Sweden](https://doi.org/10.1046/j.1365-2486.2003.00569.x) (Potsdam and Jena, Germany & Lund, Sweden).    
     
+    ## How to Best Use this Dataset
+
     ## License
     [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode) (CC0 1.0)   
 
