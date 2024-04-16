@@ -300,7 +300,7 @@ layers:
 <Block type='wide'>
   <Prose>
     This dataset presents a variety of carbon flux parameters derived from the Más Informada Carnegie-Ames-Stanford-Approach (MiCASA) model. The model’s input data includes air temperature, precipitation, incident solar radiation, a soil classification map, and several satellite derived products. All model calculations are driven by analyzed meteorological data from NASA’s Modern-Era Retrospective analysis for Research and Application, Version 2 (MERRA-2). The resulting product provides global, daily data at 0.1 degree resolution from January 2001 through December 2023. It includes carbon flux variables expressed in units of kilograms of carbon per square meter per day (kg Carbon/m²/day) from net primary production (NPP), heterotrophic respiration (Rh), wildfire emissions (FIRE), fuel wood burning emissions (FUEL), net ecosystem exchange (NEE), and net biosphere exchange (NBE). The latter two are derived from the first four (see Scientific Details below). MiCASA is an extensive revision of the CASA – Global Fire Emissions Database, version 3 (CASA-GFED3) product. CASA-GFED3 and earlier versions of MERRA-driven CASA-GFED carbon fluxes have been used in several atmospheric carbon dioxide (CO₂) transport studies, serve as a community standard for priors of flux inversion systems, and through the support of NASA’s Carbon Monitoring System (CMS), help characterize, quantify, understand and predict the evolution of global carbon sources and sinks.
-   
+
     - **Temporal Extent:** January 1, 2001 - December 31, 2023
     - **Temporal Resolution:** Daily
     - **Spatial Extent:** Global
@@ -308,10 +308,6 @@ layers:
     - **Data Units:**  Kilograms of Carbon per square meter per day (kg Carbon/m²/day)
     - **Data Type:** Research
     - **Data Latency:** Less than a year, typically 6 months
-
-    **Scientific Details:** Satellite derived products used as inputs for MiCASA include Moderate Resolution Imaging Spectroradiometer (MODIS) land cover classification (MCD12Q1), vegetation continuous fields (MOD44B), burned area (MCD64A1), and nadir BRDF-adjusted reflectances (MCD43A1). The fractional absorption of solar radiation by the vegetation canopy (fPAR), used for calculating NPP, was derived from the Red and Near-Infrared reflectances from the MCD43A1 product. All MODIS products are from Collection 6.1 except MOD44B which is held at Collection 6 to include high-latitude data. Additional flux variables that can be derived using this daily product are listed below:
-    - NEE: daily net ecosystem exchange, NEE = Rh - NPP
-    - NBE: daily net biosphere exchange, net flux from the ecosystem, NBE = Rh + FIRE + FUEL - NPP
 
   </Prose>
 </Block>
@@ -333,7 +329,12 @@ layers:
     ## Disclaimer
     All data is provided to the US GHG Center in Cloud Optimized GeoTIFF (COG) format. Careful quality checks are used to ensure data transformation has been performed correctly.
     The full title of this dataset, MiCASA Daily NPP Rh Fire Fuel Fluxes 0.1 degree x 0.1 degree V1, has been shortened for display on the US GHG Center website. The short name of the source dataset is MICASA_D_FLUX, and it is referred to as micasa-carbonflux-daygrid-v1 within the Center system. The source dataset in NetCDF format is available from the NCCS DataPortal (see Source Data Product Citation above). A user guide is available at the following link. [https://portal.nccs.nasa.gov/datashare/gmao/geos_carb/MiCASA/v1/netcdf/MiCASA_README.pdf](https://portal.nccs.nasa.gov/datashare/gmao/geos_carb/MiCASA/v1/netcdf/MiCASA_README.pdf).
-    
+
+    ## Scientific Details
+    Satellite derived products used as inputs for MiCASA include Moderate Resolution Imaging Spectroradiometer (MODIS) land cover classification (MCD12Q1), vegetation continuous fields (MOD44B), burned area (MCD64A1), and nadir BRDF-adjusted reflectances (MCD43A1). The fractional absorption of solar radiation by the vegetation canopy (fPAR), used for calculating NPP, was derived from the Red and Near-Infrared reflectances from the MCD43A1 product. All MODIS products are from Collection 6.1 except MOD44B which is held at Collection 6 to include high-latitude data. Additional flux variables that can be derived using this daily product are listed below:
+    - NEE: daily net ecosystem exchange, NEE = Rh - NPP
+    - NBE: daily net biosphere exchange, net flux from the ecosystem, NBE = Rh + FIRE + FUEL - NPP
+
     ## Key Publications
     Weir, B. & Ott, L. E. (2024). Description of MiCASA Version 1 Land Carbon Flux Products. [https://portal.nccs.nasa.gov/datashare/gmao/geos_carb/MiCASA/v1/netcdf/MiCASA_README.pdf](https://portal.nccs.nasa.gov/datashare/gmao/geos_carb/MiCASA/v1/netcdf/MiCASA_README.pdf)    
     
@@ -358,7 +359,6 @@ layers:
 
     ## Data Stewardship
     - [Data Workflow](https://us-ghg-center.github.io/ghgc-docs/data_workflow/micasa-carbonflux-daygrid-v1_Data_Flow.html)
-    - [US GHG Center Data Intake Processing and Verification Report](https://us-ghg-center.github.io/ghgc-docs/processing_and_verification_reports/micasa-carbonflux-daygrid-v1_Processing%20and%20Verification%20Report.html)
 
   </Prose>
 </Block>
