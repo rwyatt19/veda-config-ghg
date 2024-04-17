@@ -3,7 +3,7 @@ id: micasa-carbonflux-daygrid-v1
 name: MiCASA Land Carbon Flux
 description: Global, daily 0.1 degree resolution carbon fluxes from net primary production (NPP), heterotrophic respiration (Rh), wildfire emissions (FIRE), fuel wood burning emissions (FUEL), net ecosystem exchange (NEE), and net biosphere exchange (NBE) derived from the MiCASA model, version 1
 usage:
-  - url: 'https://us-ghg-center.github.io/ghgc-docs/user_data_notebooks/micasa-carbonflux-daygrid-v1_User_Notebook.html'
+  - url: 'https://us-ghg-center.github.io/ghgc-docs/datausage.html'
     label: Notebooks to read, visualize, and explore data statistics
     title: 'Data Usage Notebooks'
   - url: 'https://hub.ghg.center/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUS-GHG-Center%2Fghgc-docs&urlpath=tree%2Fghgc-docs%2Fuser_data_notebooks%2Fmicasa-carbonflux-daygrid-v1_User_Notebook.ipynb&branch=main'
@@ -48,7 +48,7 @@ layers:
       colormap_name: purd
       rescale:
         - 0
-        - 0.3
+        - 1.5
     compare:
       datasetId: micasa-carbonflux-daygrid-v1
       layerId: micasa-co2-flux-npp
@@ -61,7 +61,7 @@ layers:
         label: kg Carbon/m²/day
       type: gradient
       min: 0
-      max: 0.3
+      max: 1.5
       stops:
         - '#F7F4F9'
         - '#E9E3F0'
@@ -93,7 +93,7 @@ layers:
       colormap_name: purd
       rescale:
         - 0
-        - 0.3
+        - 1.5
     compare:
       datasetId: micasa-carbonflux-daygrid-v1
       layerId: micasa-co2-flux-hr
@@ -106,7 +106,7 @@ layers:
         label: kg Carbon/m²/day
       type: gradient
       min: 0
-      max: 0.3
+      max: 1.5
       stops:
         - '#F7F4F9'
         - '#E9E3F0'
@@ -137,8 +137,8 @@ layers:
       assets: nee
       colormap_name: coolwarm
       rescale:
-        - -0.3
-        - 0.3
+        - -1
+        - 1
     compare:
       datasetId: micasa-carbonflux-daygrid-v1
       layerId: micasa-co2-flux-nee
@@ -150,8 +150,8 @@ layers:
       unit:
         label: kg Carbon/m²/day
       type: gradient
-      min: -0.3
-      max: 0.3
+      min: -1
+      max: 1
       stops:
         - '#3B4CC0'
         - '#6788EE'
@@ -180,8 +180,8 @@ layers:
       assets: nee
       colormap_name: coolwarm
       rescale:
-        - -0.3
-        - 0.3
+        - -1
+        - 1
     compare:
       datasetId: micasa-carbonflux-daygrid-v1
       layerId: micasa-co2-flux-nbe
@@ -193,8 +193,8 @@ layers:
       unit:
         label: kg Carbon/m²/day
       type: gradient
-      min: -0.3
-      max: 0.3
+      min: -1
+      max: 1
       stops:
         - '#3B4CC0'
         - '#6788EE'
