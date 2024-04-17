@@ -3,6 +3,9 @@ id: lpjeosim-wetlandch4-grid-v2
 name: Wetland Methane Emissions, LPJ-EOSIM Model
 description: Global daily 0.5 degree resolution estimates of wetland methane emissions from the LPJ-EOSIM model, version 2
 usage:
+  - url: 'https://us-ghg-center.github.io/ghgc-docs/datatransformation.html'
+    label: Notebook showing data transformation to COG for ingest to the US GHG Center
+    title: 'Data Transformation Notebook'
   - url: 'https://us-ghg-center.github.io/ghgc-docs/datausage.html'
     label: Notebooks to read, visualize, and explore data statistics
     title: 'Data Usage Notebooks'
@@ -154,16 +157,17 @@ layers:
         - mean                
 ---
 
-<Block type='wide'>
+<Block>
   <Prose>
+    **Temporal extent:** January 1, 1990 - ongoing<br /> 
+    **Temporal resolution:** Daily     
+    **Spatial extent:** Global    
+    **Spatial resolution:** 0.5° x 0.5°<br />
+    **Data units:** Grams of methane per meter squared per day(g CH₄/m²/day)    
+    **Data type:** Research <br />
+    **Data Latency:** Updated monthly with a 2 month latency <br />
+    
     Methane (CH₄) emissions from vegetated wetlands are estimated to be the largest natural source of methane in the global CH₄ budget, contributing to roughly one third of the total of natural and anthropogenic emissions. Wetland CH₄ is produced by microbes breaking down organic matter in the oxygen deprived environment of inundated soils. Due to limited data availability, the details of the role of wetland CH₄ emissions have thus far been underrepresented. Using the Earth Observation SIMulator  version (LPJ-EOSIM) of the Lund-Potsdam-Jena Dynamic Global Vegetation Model (LPJ-DGVM) global CH₄ emissions from wetlands are estimated at 0.5 x 0.5 degree spatial resolution. By simulating wetland extent and using characteristics of inundated areas, such as wetland soil moisture, temperature, and carbon content, the model provides estimates of CH₄ quantities emitted into the atmosphere. This dataset shows concentrated methane sources from tropical and high latitude ecosystems. The LPJ-EOSIM Wetland Methane Emissions dataset consists of global daily model estimates of terrestrial wetland methane emissions from 1990 to the present, with data added bimonthly. The estimates are regularly used in conjunction with NASA’s Goddard Earth Observing System (GEOS) model to simulate the impact of wetlands and other methane sources on atmospheric methane concentrations, to compare against satellite and airborne data, and to improve understanding and prediction of wetland emissions.  
-    - **Temporal extent:** January 1, 1990 - ongoing 
-    - **Temporal resolution:** Daily      
-    - **Spatial extent:** Global    
-    - **Spatial resolution:** 0.5° x 0.5°   
-    - **Data units:** Grams of methane per meter squared per day(g CH₄/m²/day)       
-    - **Data type:** Research
-    - **Data Latency:** Updated monthly with a 2 month latency
 
   </Prose>
 </Block>
@@ -214,5 +218,8 @@ layers:
 
     ## Data Stewardship
     - [Data Workflow](https://us-ghg-center.github.io/ghgc-docs/data_workflow/lpjeosim-wetlandch4-grid-v2_Data_Flow.html)
+    - [Data Transformation Code](https://us-ghg-center.github.io/ghgc-docs/cog_transformation/lpjeosim-wetlandch4-grid-v2.html)
+    - [US GHG Center Data Intake Processing and Verification Report](https://us-ghg-center.github.io/ghgc-docs/processing_and_verification_reports/lpjeosim-wetlandch4-grid-v2_Processing%20and%20Verification%20Report.html)
+
   </Prose>
 </Block>
