@@ -81,20 +81,18 @@ layers:
         nodata: 0          
 ---
 
-<Block type='wide'>
+<Block>
   <Prose>
+    **Temporal Extent:** January 1, 2015 - February 28, 2022      
+    **Temporal Resolution:** Daily<br /> 
+    **Spatial extent:** Global    
+    **Spatial resolution:** 0.5° x 0.625°   
+    **Data units:**  Parts per million (ppm)       
+    **Data type:** Research<br /> 
+    **Data Latency:** 2-3 months
+
     In July 2014, NASA successfully launched the first dedicated Earth remote sensing satellite to study atmospheric carbon dioxide (CO₂)  from space. The Orbiting Carbon Observatory-2 (OCO-2) is an exploratory science mission designed to collect space-based global measurements of atmospheric CO₂ with the precision, resolution, and coverage needed to characterize sources and sinks (fluxes) on regional scales (≥1000 km). This dataset provides global gridded, daily column-averaged carbon dioxide (XCO₂) concentrations from January 1, 2015 - February 28, 2022.  The data are  derived from OCO-2 observations that were input to the Goddard Earth Observing System (GEOS) Constituent Data Assimilation System (CoDAS), a modeling and data assimilation system maintained by NASA’s Global Modeling and Assimilation Office (GMAO). Concentrations are measured in moles of carbon dioxide per mole of dry air (mol CO₂/mol dry) at a spatial resolution of 0.5° x 0.625°. Data assimilation synthesizes simulations and observations, adjusting modeled atmospheric constituents like CO₂ to reflect observed values. With the support of NASA’s Carbon Monitoring System (CMS) Program and the OCO Science Team, this dataset was produced as part of the OCO-2 mission which provides the highest quality space-based XCO₂ retrievals to date.     
 
-    - **Temporal Extent:** January 1, 2015 - February 28, 2022      
-    - **Temporal Resolution:** Daily
-    - **Spatial extent:** Global    
-    - **Spatial resolution:** 0.5° x 0.625°   
-    - **Data units:**  Parts per million (ppm)       
-    - **Data type:** Research
-    - **Data Latency:** 2-3 months
-
-
-    **Scientific Details:**  Though the OCO-2 mission provides high quality space-based XCO₂ retrievals, the data are characterized by large gaps in coverage due to the narrow 10 km OCO-2 ground track and an inability to measure through clouds and thick aerosols. Several different methods have been explored to produce spatially complete L3 (gridded) XCO₂ fields from the satellite data, including averaging, kriging, and data assimilation. Data assimilation synthesizes simulations and observations, adjusting the state of atmospheric constituents like CO₂ to reflect observed values, thus gap-filling the observations when and where none are unavailable based on previous observations. Compared to other methods, data assimilation has the advantage that it results in estimates based on the collective scientific understanding, notably of the Earth’s carbon cycle and atmospheric transport. For additional details on how this data was derived, please refer to Section 2 of the [OCO-2 GEOS L3 XCO₂ Product User’s Guide](https://docserver.gesdisc.eosdis.nasa.gov/public/project/OCO/OCO2_GEOS_L3_User_Guide.pdf).  
   </Prose>
 </Block>
 <Block>
@@ -112,6 +110,9 @@ layers:
 
     Users should understand that during Arctic and Antarctic nights and in cloudy conditions, there is no observational coverage from OCO-2. The data assimilation approach to gap filling ensures that when direct OCO-2 observations are unavailable, concentration estimates are informed by a combination of upwind OCO-2 observations, observations of land surface processes, and millions of meteorological observations that constrain atmospheric circulation.
     
+    ## Scientific Details
+    Though the OCO-2 mission provides high quality space-based XCO₂ retrievals, the data are characterized by large gaps in coverage due to the narrow 10 km OCO-2 ground track and an inability to measure through clouds and thick aerosols. Several different methods have been explored to produce spatially complete L3 (gridded) XCO₂ fields from the satellite data, including averaging, kriging, and data assimilation. Data assimilation synthesizes simulations and observations, adjusting the state of atmospheric constituents like CO₂ to reflect observed values, thus gap-filling the observations when and where none are unavailable based on previous observations. Compared to other methods, data assimilation has the advantage that it results in estimates based on the collective scientific understanding, notably of the Earth’s carbon cycle and atmospheric transport. For additional details on how this data was derived, please refer to Section 2 of the [OCO-2 GEOS L3 XCO₂ Product User’s Guide](https://docserver.gesdisc.eosdis.nasa.gov/public/project/OCO/OCO2_GEOS_L3_User_Guide.pdf).  
+
     ## Key Publications
     Weir, B., Oda, T., Ott, L., & Schmidt, G. A. (2022). Assessing progress toward the Paris climate agreement from space. *Environmental Research Letters, 17*(11), 111002. [https://doi.org/10.1088/1748-9326/ac998c](https://doi.org/10.1088/1748-9326/ac998c)
     
