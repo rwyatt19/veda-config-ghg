@@ -3,9 +3,6 @@ id: micasa-carbonflux-daygrid-v1
 name: MiCASA Land Carbon Flux
 description: Global, daily 0.1 degree resolution carbon fluxes from net primary production (NPP), heterotrophic respiration (Rh), wildfire emissions (FIRE), fuel wood burning emissions (FUEL), net ecosystem exchange (NEE), and net biosphere exchange (NBE) derived from the MiCASA model, version 1
 usage:
-  - url: 'https://us-ghg-center.github.io/ghgc-docs/datatransformation.html'
-    label: Notebook showing data transformation to COG for ingest to the US GHG Center
-    title: 'Data Transformation Notebook'
   - url: 'https://us-ghg-center.github.io/ghgc-docs/datausage.html'
     label: Notebooks to read, visualize, and explore data statistics
     title: 'Data Usage Notebooks'
@@ -324,13 +321,13 @@ layers:
     - MiCASA is an extensive revision of CASA-GFED3, which uses updated input data sources for improved spatial and temporal resolution (see Scientific Details above for information on input data)
     - Spatial resolution increase from 0.5° to 0.1°
     - Temporal resolution increase from monthly to daily
-    - A unit change of kg Carbon/m2/month to kg Carbon/m2/day
+    - A unit change of kg Carbon/m²/month to kg Carbon/m²/day
     - Additional data added with availability from January 2001–December 2023 (previous version data was only available from January 2003–December 2017)
     - Inclusion of the Net Biosphere Exchange (NBE) data layer
     - MiCASA v1 data was delivered to the US GHG Center in Cloud Optimized GeoTIFF (COG) format, whereas CASA-GFED3 data was delivered in NetCDF format and then transformed into COG
 
     ## Disclaimer
-    All data is provided to the US GHG Center in Cloud Optimized GeoTIFF (COG) format. Careful quality checks are used to ensure data transformation has been performed correctly.
+    All data is provided to the US GHG Center in Cloud Optimized GeoTIFF (COG) format. Careful quality checks were used to ensure data transformation was performed correctly by the data producer.
     The full title of this dataset, MiCASA Daily NPP Rh Fire Fuel Fluxes 0.1 degree x 0.1 degree V1, has been shortened for display on the US GHG Center website. The short name of the source dataset is MICASA_D_FLUX, and it is referred to as micasa-carbonflux-daygrid-v1 within the Center system. The source dataset in NetCDF format is available from the NCCS DataPortal (see Source Data Product Citation above). A user guide is available at the following link. [https://portal.nccs.nasa.gov/datashare/gmao/geos_carb/MiCASA/v1/netcdf/MiCASA_README.pdf](https://portal.nccs.nasa.gov/datashare/gmao/geos_carb/MiCASA/v1/netcdf/MiCASA_README.pdf).
 
     ## Scientific Details
@@ -362,7 +359,7 @@ layers:
 
     ## Data Stewardship
     - [Data Workflow](https://us-ghg-center.github.io/ghgc-docs/data_workflow/micasa-carbonflux-daygrid-v1_Data_Flow.html)
-    - [Data Transformation Code](https://us-ghg-center.github.io/ghgc-docs/cog_transformation/micasa-carbonflux-daygrid-v1.html)
+    - Data Transformation Code: n/a - The dataset was utilized in its original, unaltered format
     - [US GHG Center Data Intake Processing and Verification Report](https://us-ghg-center.github.io/ghgc-docs/processing_and_verification_reports/micasa-carbonflux-daygrid-v1_Processing%20and%20Verification%20Report.html)
 
   </Prose>
