@@ -6,10 +6,10 @@ usage:
   - url: 'https://us-ghg-center.github.io/ghgc-docs/datausage.html'
     label: Notebooks to read, visualize, and explore data statistics
     title: 'Data Usage Notebooks'
-  - url: 'https://hub.ghg.center/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUS-GHG-Center%2Fghgc-docs&urlpath=tree%2Fghgc-docs%2Fuser_data_notebooks%2Flpjeosim-wetlandch4-grid-v2_User_Notebook.ipynb&branch=main'
+  - url: 'https://hub.ghg.center/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUS-GHG-Center%2Fghgc-docs&urlpath=tree%2Fghgc-docs%2Fuser_data_notebooks%2Flpjeosim-wetlandch4-daygrid-v2_User_Notebook.ipynb&branch=main'
     label: Run example notebook
     title: Interactive Session in the US GHG Center JupyterHub (requires account)
-  - url: https://dljsq618eotzp.cloudfront.net/browseui/index.html#lpjeosim-wetlandch4-grid-v2/
+  - url: https://dljsq618eotzp.cloudfront.net/browseui/index.html#lpjeosim-wetlandch4-daygrid-v2/
     label: Browse and download the data
     title: Data Browser
 media:
@@ -164,14 +164,14 @@ layers:
     **Data type:** Research <br />
     **Data Latency:** Updated monthly with a 2 month latency <br />
     
-    Methane (CH₄) emissions from vegetated wetlands are estimated to be the largest natural source of methane in the global CH₄ budget, contributing to roughly one third of the total of natural and anthropogenic emissions. Wetland CH₄ is produced by microbes breaking down organic matter in the oxygen deprived environment of inundated soils. Due to limited data availability, the details of the role of wetland CH₄ emissions have thus far been underrepresented. Using the Earth Observation SIMulator  version (LPJ-EOSIM) of the Lund-Potsdam-Jena Dynamic Global Vegetation Model (LPJ-DGVM) global CH₄ emissions from wetlands are estimated at 0.5 x 0.5 degree spatial resolution. By simulating wetland extent and using characteristics of inundated areas, such as wetland soil moisture, temperature, and carbon content, the model provides estimates of CH₄ quantities emitted into the atmosphere. This dataset shows concentrated methane sources from tropical and high latitude ecosystems. The LPJ-EOSIM Wetland Methane Emissions dataset consists of global daily model estimates of terrestrial wetland methane emissions from 1990 to the present, with data added bimonthly. The estimates are regularly used in conjunction with NASA’s Goddard Earth Observing System (GEOS) model to simulate the impact of wetlands and other methane sources on atmospheric methane concentrations, to compare against satellite and airborne data, and to improve understanding and prediction of wetland emissions.  
+    Methane (CH₄) emissions from vegetated wetlands are estimated to be the largest natural source of methane in the global CH₄ budget, contributing to roughly one third of the total of natural and anthropogenic emissions. Wetland CH₄ is produced by microbes breaking down organic matter in the oxygen deprived environment of inundated soils. Due to limited data availability, the details of the role of wetland CH₄ emissions have thus far been underrepresented. Using the Earth Observation SIMulator  version (LPJ-EOSIM) of the Lund-Potsdam-Jena Dynamic Global Vegetation Model (LPJ-DGVM) global CH₄ emissions from wetlands are estimated at 0.5 x 0.5 degree spatial resolution. By simulating wetland extent and using characteristics of inundated areas, such as wetland soil moisture, temperature, and carbon content, the model provides estimates of CH₄ quantities emitted into the atmosphere. This dataset shows concentrated methane sources from tropical and high latitude ecosystems. The LPJ-EOSIM Wetland Methane Emissions dataset consists of global daily model estimates of terrestrial wetland methane emissions from 1990 to the present, with data added bimonthly. The estimates are regularly used in conjunction with NASA’s Goddard Earth Observing System (GEOS) model to simulate the impact of wetlands and other methane sources on atmospheric methane concentrations, to compare against satellite and airborne data, and to improve understanding and prediction of wetland emissions. This is a new version and replaces the LPJ-wsl dataset previously available in the GHG Center.  
 
   </Prose>
 </Block>
 <Block>
   <Prose>
     ## Source Data Product Citation
-    Zhen Zhang. (2023). Global wetland CH₄ emissions estimated by LPJ-wsl model for 1980-2021 [Data set]. Zenodo. https://doi.org/10.5281/zenodo.6964918 
+    This data product will soon be available at the NASA Land Processes Distributed Active Archive Data Center (LP DAAC). Once available, the data product citation will be provided here. In the meantime, please refer to the [Zhang et al. 2017 publication](https://doi.org/10.1073/pnas.1618765114) for more information.
 
     ## Version History
     The current dataset version is v2, which replaced v1 in the US GHG Center in April 2024. Summary of version 2 update changes:
@@ -207,6 +207,10 @@ layers:
 
     Zhang, Z., Zimmermann, N. E., Kaplan, J. O., & Poulter, B. (2016). Modeling spatiotemporal dynamics of global wetlands: comprehensive evaluation of a new sub-grid TOPMODEL parameterization and uncertainties. *Biogeosciences, 13*(5), 1387–1408. [https://doi.org/10.5194/bg-13-1387-2016](https://doi.org/10.5194/bg-13-1387-2016)
     
+    ## Learn More
+    - See a video of methane emissions from wetlands around the globe in the [Intro to the US GHG Center Data Insight](https://earth.gov/ghgcenter/stories/intro-us-ghg-center)
+    - See how wetlands in the tropics and in higher latitude areas differ in their contribution to global wetland methane emissions in the [Tracking Greenhouse Gas Cycles Data Insight](https://earth.gov/ghgcenter/stories/tracking-greenhouse-gas-cycles)
+
     ## Acknowledgment
     The LPJ-EOSIM model is based on the development of the Lund-Potsdam-Jena Dynamic Global Vegetation Model (LPJ-DGVM) [by researchers at institutions in Germany and Sweden](https://doi.org/10.1046/j.1365-2486.2003.00569.x) (Potsdam and Jena, Germany & Lund, Sweden).    
     
@@ -214,9 +218,9 @@ layers:
     [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode) (CC0 1.0)   
 
     ## Data Stewardship
-    - [Data Workflow](https://us-ghg-center.github.io/ghgc-docs/data_workflow/lpjeosim-wetlandch4-grid-v2_Data_Flow.html)
+    - [Data Workflow](https://us-ghg-center.github.io/ghgc-docs/data_workflow/lpjeosim-wetlandch4-daygrid-v2_Data_Flow.html)
     - Data Transformation Code: n/a - The dataset was utilized in its original, unaltered format
-    - [US GHG Center Data Intake Processing and Verification Report](https://us-ghg-center.github.io/ghgc-docs/processing_and_verification_reports/lpjeosim-wetlandch4-grid-v2_Processing%20and%20Verification%20Report.html)
+    - [US GHG Center Data Intake Processing and Verification Report](https://us-ghg-center.github.io/ghgc-docs/processing_and_verification_reports/lpjeosim-wetlandch4-daygrid-v2_Processing%20and%20Verification%20Report.html)
 
   </Prose>
 </Block>
