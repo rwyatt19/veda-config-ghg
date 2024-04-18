@@ -6,7 +6,7 @@ usage:
   - url: 'https://us-ghg-center.github.io/ghgc-docs/cog_transformation/oco2geos-co2-daygrid-v10r.html'
     label: Notebook showing data transformation to COG for ingest to the US GHG Center
     title: 'Data Transformation Notebook'
-  - url: 'https://us-ghg-center.github.io/ghgc-docs/user_data_notebooks/oco2geos-co2-daygrid-v10r_User_Notebook.html'
+  - url: 'https://us-ghg-center.github.io/ghgc-docs/datausage.html'
     label: Notebooks to read, visualize, and explore data statistics
     title: 'Data Usage Notebooks'
   - url: 'https://hub.ghg.center/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUS-GHG-Center%2Fghgc-docs&urlpath=tree%2Fghgc-docs%2Fuser_data_notebooks%2Foco2geos-co2-daygrid-v10r_User_Notebook.ipynb&branch=main'
@@ -104,8 +104,8 @@ layers:
     Daily random error statistics (i.e. precisions) are calculated using [Desroziers et al. (2005) diagnostics](https://doi.org/10.1256/qj.05.108), and can be found in the precision data layer accompanying the XCO₂ data layer. For more information on how these diagnostics are used, please refer to the “Uncertainty quantification” section of the [OCO-2 GEOS L3 XCO₂ Product User’s Guide](https://docserver.gesdisc.eosdis.nasa.gov/public/project/OCO/OCO2_GEOS_L3_User_Guide.pdf). For estimating systematic errors, analyses against independent data are performed. For more information on these analyses, please refer to Section 3 of the [OCO-2 GEOS L3 XCO₂ Product User’s Guide](https://docserver.gesdisc.eosdis.nasa.gov/public/project/OCO/OCO2_GEOS_L3_User_Guide.pdf).
 
     ## Disclaimer
-    All data provided in the U.S. GHG Center has been transformed from the original format (NetCDF) into Cloud Optimized GeoTIFF ([COG](https://www.cogeo.org/)). Careful quality checks are used to ensure data transformation has been performed correctly. Apart from the data format, the OCO-2 GEOS Assimilated CO₂ Concentrations dataset is identical to the [OCO2_GEOS_L3CO2_DAY dataset available at GES DISC](https://doi.org/10.5067/Y9M4NM9MPCGH). 
-
+    This datasethas been transformed from the original format (NetCDF) into Cloud Optimized GeoTIFF ([COG](https://www.cogeo.org/)) for display in the US GHG Center. Careful quality checks are used to ensure data transformation has been performed correctly. Apart from the data format, the OCO-2 GEOS Assimilated CO₂ Concentrations dataset is identical to the [OCO2_GEOS_L3CO2_DAY dataset available at GES DISC](https://doi.org/10.5067/Y9M4NM9MPCGH). 
+    
     The full title of the dataset, [OCO-2 GEOS Level 3 daily, 0.5x0.625 assimilated CO2 V10r](https://doi.org/10.5067/Y9M4NM9MPCGH), has been shortened for display on the GHG Center website. The short name of the source dataset is [OCO2_GEOS_L3CO2_DAY](https://doi.org/10.5067/Y9M4NM9MPCGH), but it is referred to as oco2geos-co2-daygrid-v10r in the GHG Center system.  
 
     Users should understand that during Arctic and Antarctic nights and in cloudy conditions, there is no observational coverage from OCO-2. The data assimilation approach to gap filling ensures that when direct OCO-2 observations are unavailable, concentration estimates are informed by a combination of upwind OCO-2 observations, observations of land surface processes, and millions of meteorological observations that constrain atmospheric circulation.
@@ -131,6 +131,10 @@ layers:
     
     Yuen, K. (n.d.). *Home*. Orbiting Carbon Observatory-2. [https://ocov2.jpl.nasa.gov/](https://ocov2.jpl.nasa.gov/)    
     
+    ## Learn More
+    - Learn more about how OCO-2 observations and measurements from other satellites contribute to GHG monitoring and models in the [Tracking Greenhouse Gas Cycles Data Insight](https://earth.gov/ghgcenter/stories/tracking-greenhouse-gas-cycles) 
+    - Learn more about the [OCO-2 mission](https://ocov2.jpl.nasa.gov/)
+
     ## Acknowledgment
     The development of this dataset has been supported by NASA’s [Carbon Monitoring System (CMS) Program](https://carbon.nasa.gov/cms/) and the [OCO Science Team](https://ocov2.jpl.nasa.gov/mission/teams/).    
     

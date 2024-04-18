@@ -6,7 +6,7 @@ usage:
   - url: 'https://us-ghg-center.github.io/ghgc-docs/cog_transformation/oco2-mip-co2budget-yeargrid-v1.html'
     label: Notebook showing data transformation to COG for ingest to the US GHG Center
     title: 'Data Transformation Notebook'
-  - url: 'https://us-ghg-center.github.io/ghgc-docs/user_data_notebooks/oco2-mip-co2budget-yeargrid-v1_User_Notebook.html'
+  - url: 'https://us-ghg-center.github.io/ghgc-docs/datausage.html'
     label: Notebooks to read, visualize, and explore data statistics
     title: 'Data Usage Notebooks'
   - url: 'https://hub.ghg.center/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FUS-GHG-Center%2Fghgc-docs&urlpath=tree%2Fghgc-docs%2Fuser_data_notebooks%2Foco2-mip-co2budget-yeargrid-v1_User_Notebook.ipynb&branch=main'
@@ -745,13 +745,12 @@ layers:
     - The Fractional Uncertainty Reduction (FUR) values, which characterize the impact of assimilated CO₂ data on reducing NCE uncertainties
 
     ## Scientific Details
-    Leveraging the OCO-2 MIP, the surface-atmosphere CO₂ fluxes are estimated from four standardized experiments using:
-    - IS: in situ CO₂ measurements in the National Oceanic and Atmospheric Administration (NOAA) Observation Package ([ObsPack](https://gml.noaa.gov/ccgg/obspack/))
-    - LNLG: column-averaged CO₂ dry air mole fraction (XCO₂) retrievals over land from NASA’s Orbiting Carbon Observatory-2 (OCO-2) Land Nadir and Land Glint data
-    - LNLGIS: both in situ CO₂ and OCO-2 land XCO₂ data
-    - LNLGOGIS: in situ CO₂, OCO-2 land XCO₂, and OCO-2 ocean XCO₂ data combined
+    Leveraging the OCO-2 MIP, the surface-atmosphere CO₂ fluxes are estimated from four standardized experiments of which one is included in the Center:
+    - LNLGIS: both in situ CO₂ measurements from the National Oceanic and Atmospheric Administration (NOAA) Observation Package [ObsPack](https://gml.noaa.gov/ccgg/obspack/) and column-averaged CO₂ dry air mole fraction (XCO₂) retrievals from NASA’s Orbiting Carbon Observatory-2 (OCO-2) Land Nadir and Land Glint data
 
-    The full dataset with all layers and derived national totals can be accessed on the [CEOS website](https://doi.org/10.48588/npf6-sw92).
+    For the LNLGIS experiment, net carbon exchange (NCE) and ocean CO₂ fluxes are optimized to match the atmospheric CO₂ observations within their uncertainties. The net biosphere exchange (NBE) is calculated by subtracting bottom-up fossil fuel emission estimates from NCE. The net loss of land carbon is then estimated by accounting for “lateral” carbon fluxes from the terrestrial biosphere such as land-to-ocean transport of carbon by rivers and the import and export of harvested agricultural and wood products. Changes in terrestrial carbon stocks (ΔCloss) reflect the combined impact of direct anthropogenic activities and changes to managed ecosystems in response to rising atmospheric CO2 concentrations, climate change, and disturbances (i.e., droughts, floods, wildfires, severe weather). 
+
+    The US GHG Center explore view only highlights flux estimates from the LNLGIS experiment, but the full dataset with all layers and national totals can be accessed on the [CEOS website](https://ceos.org/gst/carbon-dioxide.html). In addition, the following Jupyter Notebook demonstrates how to read, visualize and explore statistics for the national (i.e. country level) CO₂ budget data: [OCO-2 MIP National CO₂ Budget Notebook](https://us-ghg-center.github.io/ghgc-docs/user_data_notebooks/oco2-mip-National-co2budget.html). 
 
     ## Key Publications
     Byrne, B., Baker, D. F., Basu, S., Bertolacci, M., Bowman, K. W., Carroll, D., Chatterjee, A., Chevallier, F., Ciais, P., Cressie, N., Crisp, D., Crowell, S., Deng, F., Deng, Z., Deutscher, N. M., Dubey, M. K., Feng, S., García, O. E., Griffith, D. W. T., … Zeng, N. (2023). National CO₂ budgets (2015–2020) inferred from atmospheric CO₂ observations in support of the global stocktake. *Earth System Science Data, 15*, 963–1004. [https://doi.org/10.5194/essd-15-963-2023](https://doi.org/10.5194/essd-15-963-2023)
