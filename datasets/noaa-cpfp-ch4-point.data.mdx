@@ -1,10 +1,10 @@
 ---
-id: noaa-cpfp-ch4-point
+id: noaa-gggrn-ch4-concentrations
 name: Atmospheric Methane Concentrations from the NOAA Global Monitoring Laboratory
 description: Atmospheric concentrations of methane (CH₄) from discrete air samples collected over time at globally distributed surface sites
 usage:
-  - url: 'https://us-ghg-center.github.io/ghgc-docs/cog_transformation/noaa-cpfp-ch4-point.html'
-    label: Notebook showing data transformation to COG for ingest to the US GHG Center
+  - url: 'https://us-ghg-center.github.io/ghgc-docs/cog_transformation/noaa-gggrn-ch4-concentrations.html'
+    label: Notebook showing data transformation for ingest to the US GHG Center
     title: 'Data Transformation Notebook'
   - url: 'https://us-ghg-center.github.io/ghgc-docs/datausage.html'
     label: Notebooks to read, visualize, and explore data statistics
@@ -29,8 +29,8 @@ taxonomy:
       - CH₄
 disableExplore: true
 layers:
-  - id: noaa-cpfp-ch4-point
-    stacCol: noaa-cpfp-ch4-point
+  - id: noaa-gggrn-ch4-concentrations
+    stacCol: noaa-gggrn-ch4-concentrations
     name: Methane Concentration (Air Sample) 
     type: vector
     description: Discrete air sample measurements of methane (CH₄)
@@ -41,15 +41,15 @@ layers:
       - 0
       - 20
     sourceParams:
-      assets: noaa-cpfp-ch4-point
+      assets: noaa-gggrn-ch4-concentrations
       colormap_name: plasma
       rescale:
         - 0
         - 1000
       nodata: 0
     compare:
-      datasetId: noaa-cpfp-ch4-point
-      layerId: noaa-cpfp-ch4-point
+      datasetId: noaa-gggrn-ch4-concentrations
+      layerId: noaa-gggrn-ch4-concentrations
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           if (dateFns && datetime && compareDatetime) return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -184,6 +184,9 @@ layers:
 
     ## Data Stewardship
     - [Data Workflow](https://us-ghg-center.github.io/ghgc-docs/data_workflow/noaa-insitu_Data_Flow.html)
+    - [Data Transformation Code](https://us-ghg-center.github.io/ghgc-docs/cog_transformation/noaa-gggrn-ch4-concentrations.html)
+    - [US GHG Center Data Intake Processing and Verification Report](https://us-ghg-center.github.io/ghgc-docs/processing_and_verification_reports/noaa-gggrn-ch4-concentrations_Processing%20and%20Verification%20Report.html)
+
 
     </Prose>
 </Block>
