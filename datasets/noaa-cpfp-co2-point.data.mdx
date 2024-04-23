@@ -1,10 +1,10 @@
 ---
-id: noaa-cpfp-co2-point
+id: noaa-gggrn-co2-concentrations
 name: Atmospheric Carbon Dioxide Concentrations from NOAA Global Monitoring Laboratory
 description: Atmospheric concentrations of carbon dioxide (CO₂) from discrete air samples collected since 1968 at globally distributed surface sites
 usage:
-  - url: 'https://us-ghg-center.github.io/ghgc-docs/cog_transformation/noaa-cpfp-co2-point.html'
-    label: Notebook showing data transformation to COG for ingest to the US GHG Center
+  - url: 'https://github.com/US-GHG-Center/custom-interfaces/tree/main/integrate_additional_dataset_into_NOAA/noaa-cpfp-point/data_processing'
+    label: Notebook showing data transformation for ingest to the US GHG Center
     title: 'Data Transformation Notebook'
   - url: 'https://us-ghg-center.github.io/ghgc-docs/datausage.html'
     label: Notebooks to read, visualize, and explore data statistics
@@ -29,8 +29,8 @@ taxonomy:
       - CO₂
 disableExplore: true
 layers:
-  - id: noaa-cpfp-co2-point
-    stacCol: noaa-cpfp-co2-point
+  - id: noaa-gggrn-co2-concentrations
+    stacCol: noaa-gggrn-co2-concentrations
     name: Carbon Dioxide (Air Sample)
     type: vector
     description: Atmospheric concentrations of carbon dioxide (CO₂) from discrete air samples collected since 1968 at globally distributed surface sites
@@ -41,15 +41,15 @@ layers:
       - 0
       - 20
     sourceParams:
-      assets: noaa-cpfp-co2-point
+      assets: noaa-gggrn-co2-concentrations
       colormap_name: plasma
       rescale:
         - 0
         - 1000
       nodata: 0
     compare:
-      datasetId: noaa-cpfp-co2-point
-      layerId: noaa-cpfp-co2-point
+      datasetId: noaa-gggrn-co2-concentrations
+      layerId: noaa-gggrn-co2-concentrations
       mapLabel: |
         ::js ({ dateFns, datetime, compareDatetime }) => {
           if (dateFns && datetime && compareDatetime) return `${dateFns.format(datetime, 'LLL yyyy')} VS ${dateFns.format(compareDatetime, 'LLL yyyy')}`;
@@ -84,13 +84,13 @@ layers:
     **Temporal Resolution:** The GHG Center provides only daily and monthly for continuous measurements; temporal resolution varies by station for non-continuous measurements (can be daily up to weekly)<br />
     **Spatial Extent:** Global   
     **Spatial Resolution:** Point location samples    
-    **Data Units:**  parts CO₂ per million (ppm)<br /> 
+    **Data Units:**  Parts CO₂ per million (ppm)<br /> 
     **Data Type:** Operational<br /> 
     **Data Latency:** Updated annually
     
     The Global Greenhouse Gas Reference Network (GGGRN) for the Carbon Cycle and Greenhouse Gases (CCGG) Group is part of NOAA'S Global Monitoring Laboratory (GML) in Boulder, CO. The Reference Network measures the atmospheric distribution and trends of the three main long-term drivers of climate change, carbon dioxide (CO₂), methane (CH₄), and nitrous oxide (N<sub>2</sub>O), as well as carbon monoxide (CO) and many other trace gases which help interpretation of the main GHGs. The Reference Network measurement program includes continuous in-situ measurements at 4 baseline observatories (global background sites) and 8 tall towers, as well as flask-air samples collected by volunteers at over 50 additional regional background sites and from small aircraft conducting regular vertical profiles. The flask air samples are returned to GML for analysis where measurements of about 55 trace gases are completed.
 
-    This dataset contains CO2 concentration measurements made from surface in-situ and tower sites and from surface flask air samples. The surface in-situ and tower instrumentation measures CO2 continuously (hourly, daily and monthly) while the flask air samples are non-continuous measurements (frequency varies by station). Due to the high data volume of hourly tower measurements, daily and monthly averages are generated for display in the US GHG Center. Several surface PFP flask sites have been excluded due to short records: LAC, INX, BWD, NEB, NWB, TMD, SPF, KLM, MKO, MLO, HFM.
+    This dataset contains CO₂ concentration measurements made from surface in-situ and tower sites and from surface flask air samples. The surface in-situ and tower instrumentation measures CO2 continuously (hourly, daily and monthly) while the flask air samples are non-continuous measurements (frequency varies by station). Due to the high data volume of hourly tower measurements, daily and monthly averages are generated for display in the US GHG Center. Several surface PFP flask sites have been excluded due to short records: LAC, INX, BWD, NEB, NWB, TMD, SPF, KLM, MKO, MLO, HFM.
 
     NOAA's GGGRN maintains the World Meteorological Organization international calibration scales for CO₂, CH₄, CO, N<sub>2</sub>O, and SF<sub>6</sub> in air. The measurements from the GGGRN serve as a comparison with measurements made by many other international laboratories, and with regional studies. They are widely used in modeling studies that infer space-time patterns of emissions and removals of greenhouse gases that are optimally consistent with the atmospheric observations, given wind patterns. These data serve as an early warning for climate "surprises". The measurements are also helpful for the ongoing evaluation of remote sensing technologies.
 
@@ -181,6 +181,8 @@ layers:
 
     ## Data Stewardship
     - [Data Workflow](https://us-ghg-center.github.io/ghgc-docs/data_workflow/noaa-insitu_Data_Flow.html)
+    - [Data Transformation Code](https://github.com/US-GHG-Center/custom-interfaces/tree/main/integrate_additional_dataset_into_NOAA/noaa-cpfp-point/data_processing)
+    - [US GHG Center Data Intake Processing and Verification Report](https://us-ghg-center.github.io/ghgc-docs/processing_and_verification_reports/noaa-gggrn-ch4-concentrations_Processing%20and%20Verification%20Report.html)
 
     </Prose>
 </Block>
